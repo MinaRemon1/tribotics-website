@@ -1,0 +1,1 @@
+const words = ["better", "cute", "beautiful", "modern"];
