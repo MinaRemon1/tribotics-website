@@ -7,7 +7,7 @@ const Navbar = () => {
       <header className="fixed right-0 left-0 top-0 pl-3 pr-3 md:pl-10 md:pr-10 py-4 px-4 bg-transparent backdrop-blur-lg z-[100] flex items-center border-neutral-900 justify-between">
         <aside className="flex items-center gap-[2px]">
             <Image 
-            src="/logo.png"
+            src="/logo2.png"
             width={150}
             height={70}
             alt="Logo"

@@ -112,7 +112,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
         <div className="text-3xl mx-auto font-normal text-black dark:text-neutral-800">
           {/* We are a company that specializes in making <br /> robots? maybe? not sure... that are
           <FlipWords className="" words={words} /> */}
-          <p>We orchestrate cutting-edge robotic automation solutions <br /> that elevate industrial efficiency and productivity</p>
+          We orchestrate cutting-edge robotic automation solutions <br /> that elevate industrial efficiency and productivity
         </div>
         <div className="pt-10">
           <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-gradient-to-br from-gray-800 to-gray-900 px-6 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-50">
