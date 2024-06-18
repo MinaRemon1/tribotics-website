@@ -32,11 +32,11 @@ const Navbar = () => {
               </button>
             </Link> */}
             <p className='text-white'>Home</p>
-            {/* <p className='text-white'>About</p>
+            <p className='text-white'>About</p>
             <p className='text-white'>Contact</p>
             <p className='text-white'>Blog</p>
             <p className='text-white'>Case Studies</p>
-            <p className='text-white'>Recruitment</p> */}
+            <p className='text-white'>Recruitment</p>
         </aside>
       </header>
     )
