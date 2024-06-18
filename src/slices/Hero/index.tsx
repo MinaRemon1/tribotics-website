@@ -84,6 +84,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
             <div>
               <p className="bg-clip-text pt-20 text-transparent drop-shadow-2xl bg-gradient-to-b from-white/80 to-white/20 text-3xl md:text-4xl lg:text-6xl">
                 {slice.primary.usp}
+                {/* A USP that is <FlipWords className="bg-clip-text pt-20 text-transparent drop-shadow-2xl bg-gradient-to-b from-white/80 to-white/20 text-3xl md:text-4xl lg:text-6xl" words={words} /> */}
               </p>
             </div>
             <div>
