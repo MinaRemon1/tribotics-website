@@ -17,7 +17,7 @@ import { TextImage } from "@/components/ui/content";
  */
 export type HeroProps = SliceComponentProps<Content.HeroSlice>;
 
-const words = ["Automation", "Robotic Systems", "Mechatronics", "Autonomous Systems", "Automated Machinery"];
+const words = ["Automations", "Robotics", "Mechatronics"];
 
 const content = [
   {
