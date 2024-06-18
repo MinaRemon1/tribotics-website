@@ -182,21 +182,21 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       <br /><br /><br /><br />
       <header className="right-0 left-0 top-0 pl-3 pr-3 md:pl-10 md:pr-10 py-4 px-4 bg-black backdrop-blur-lg z-[100] flex items-center border-t-[1px] border-neutral-900 justify-between w-screen">
         <aside className="flex items-center gap-[2px]">
-            {/* <Image 
+            <Image 
             src="/logo2.png"
             width={120}
             height={70}
             alt="Logo"
             className=""
-            /> */}
-            <p>Footer here</p>
+            />
+            {/* <p>Footer here</p> */}
         </aside>
-        {/* <div className="absolute left-[50%] top-[50%] transform translate-x-[-50%] translate-y-[-50%] hidden md:block">
+        <div className="absolute left-[50%] top-[50%] transform translate-x-[-50%] translate-y-[-50%] hidden md:block">
         <p className="text-zinc-400 text-sm">© 2024 Tribotics. All rights reserved.</p>
         </div>
         <aside className="flex items-center gap-4">
             <p className="text-zinc-400 text-sm">email@tribotics.com</p>
-        </aside> */}
+        </aside>
       </header>
     </section>
   );
