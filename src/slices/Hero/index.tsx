@@ -109,7 +109,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
         </BackgroundGradientAnimation>
       </div>
       <div className="h-[20rem] flex flex-col justify-center items-center px-4">
-        <div className="text-3xl mx-auto font-normal text-black dark:text-neutral-800">
+        <div className="text-3xl mx-auto font-normal justify-center text-black dark:text-neutral-800">
           {/* We are a company that specializes in making <br /> robots? maybe? not sure... that are
           <FlipWords className="" words={words} /> */}
           We orchestrate cutting-edge robotic automation solutions <br /> that elevate industrial efficiency and productivity
@@ -195,7 +195,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
         <p className="text-zinc-400 text-sm">© 2024 Tribotics. All rights reserved.</p>
         </div>
         <aside className="flex items-center gap-4">
-            <p className="text-zinc-400 text-sm">email@tribotics.com</p>
+            <p className="text-zinc-400 text-sm">email@tribotics.co.uk</p>
         </aside>
       </header>
     </section>
