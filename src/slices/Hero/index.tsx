@@ -11,6 +11,8 @@ import { SliceComponentProps } from "@prismicio/react";
 import Image from "next/image";
 import Link from "next/link";
 import { TextImage } from "@/components/ui/content";
+import { HeroHighlight, Highlight } from "@/components/ui/hero-highlight";
+import { motion } from "framer-motion";
 
 /**
  * Props for `Hero`.
@@ -18,55 +20,6 @@ import { TextImage } from "@/components/ui/content";
 export type HeroProps = SliceComponentProps<Content.HeroSlice>;
 
 const words = ["Automations", "Robotics", "Mechatronics"];
-
-const content = [
-  {
-    title: "Collaborative Editing",
-    description:
-      "Work together in real time with your team, clients, and stakeholders. Collaborate on documents, share ideas, and make decisions quickly. With our platform, you can streamline your workflow and increase productivity.",
-    content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-        Collaborative Editing
-      </div>
-    ),
-  },
-  {
-    title: "Real time changes",
-    description:
-      "See changes as they happen. With our platform, you can track every modification in real time. No more confusion about the latest version of your project. Say goodbye to the chaos of version control and embrace the simplicity of real-time updates.",
-    content: (
-      <div className="h-full w-full  flex items-center justify-center text-white">
-        <Image
-          src="/linear.webp"
-          width={300}
-          height={300}
-          className="h-full w-full object-cover"
-          alt="linear board demo"
-        />
-      </div>
-    ),
-  },
-  {
-    title: "Version control",
-    description:
-      "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
-    content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] flex items-center justify-center text-white">
-        Version control
-      </div>
-    ),
-  },
-  {
-    title: "Running out of content",
-    description:
-      "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
-    content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-        Running out of content
-      </div>
-    ),
-  },
-];
 
 /**
  * Component for "Hero" Slices.
@@ -87,11 +40,10 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
                 Tribotics
               </p>
             </div>
-            <div>
-              <p className="text-white font-thin text-xl md:text-2xl lg:text-3xl">
+            <div className="text-white font-thin text-xl md:text-2xl lg:text-3xl">
+              
                 {/* {slice.primary.tag_line} */}
                 Empowering Industry with Intelligent<FlipWords className="" words={words} />
-              </p>
             </div>
             <div className="pt-20">
               <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-gradient-to-br from-gray-800 to-gray-900 px-6 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-50">
@@ -109,10 +61,8 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
         </BackgroundGradientAnimation>
       </div>
       <div className="h-[20rem] flex flex-col justify-center items-center px-4">
-        <div className="text-3xl mx-auto font-normal justify-center text-black dark:text-neutral-800">
-          {/* We are a company that specializes in making <br /> robots? maybe? not sure... that are
-          <FlipWords className="" words={words} /> */}
-          We orchestrate cutting-edge robotic automation solutions <br /> that elevate industrial efficiency and productivity
+        <div className="text-3xl mx-auto font-normal items-center content-center justify-center text-black dark:text-neutral-800">
+          <h1 className="justify-center items-center">We orchestrate cutting-edge robotic automation solutions <br /> that elevate industrial efficiency and productivity</h1>
         </div>
         <div className="pt-10">
           <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-gradient-to-br from-gray-800 to-gray-900 px-6 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-50">
@@ -171,14 +121,6 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
         imageClassName="rounded-md"
       />
     </div>
-      {/* <div className="max-w-5xl mx-auto px-8 mt-20 text-center flex items-center justify-center flex-col">
-        <h2 className="text-black text-3xl md:text-4xl font-bold text-center">
-          Section 3
-        </h2>
-      <div className="p-10">
-        <StickyScroll content={content} />
-      </div>
-      </div> */}
       <br /><br /><br /><br />
       <header className="right-0 left-0 top-0 pl-3 pr-3 md:pl-10 md:pr-10 py-4 px-4 bg-black backdrop-blur-lg z-[100] flex items-center border-t-[1px] border-neutral-900 justify-between w-screen">
         <aside className="flex items-center gap-[2px]">
@@ -189,13 +131,12 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
             alt="Logo"
             className=""
             />
-            {/* <p>Footer here</p> */}
         </aside>
         <div className="absolute left-[50%] top-[50%] transform translate-x-[-50%] translate-y-[-50%] hidden md:block">
         <p className="text-zinc-400 text-sm">© 2024 Tribotics. All rights reserved.</p>
         </div>
         <aside className="flex items-center gap-4">
-            <p className="text-zinc-400 text-sm">email@tribotics.co.uk</p>
+            <p className="text-zinc-400 text-sm">sales@tribotics.co.uk</p>
         </aside>
       </header>
     </section>
