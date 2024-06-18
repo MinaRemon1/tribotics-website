@@ -4,7 +4,7 @@ import { MenuIcon } from 'lucide-react'
 
 const Navbar = () => {
     return (
-      <header className="fixed right-0 left-0 top-0 pl-3 pr-3 md:pl-10 md:pr-10 py-4 px-4 bg-black/60 backdrop-blur-lg z-[100] flex items-center border-b-[1px] border-neutral-900 justify-between">
+      <header className="fixed right-0 left-0 top-0 pl-3 pr-3 md:pl-10 md:pr-10 py-4 px-4 bg-black/30 backdrop-blur-lg z-[100] flex items-center border-neutral-900 justify-between">
         <aside className="flex items-center gap-[2px]">
             <Image 
             src="/logo.png"
