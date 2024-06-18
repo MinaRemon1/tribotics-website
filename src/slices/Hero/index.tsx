@@ -80,15 +80,15 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       <Navbar />
       <div className="relative w-full flex items-center justify-center">
         <BackgroundGradientAnimation>
-          <div className="absolute z-50 inset-0 flex flex-col items-start pl-12 justify-center text-white font-bold px-4 pointer-events-none text-center space-y-4">
+          <div className="absolute z-50 inset-0 flex flex-col items-start pl-52 justify-center text-white font-bold px-4 pointer-events-none text-center space-y-4">
             <div>
-              <p className="bg-clip-text pt-20 text-transparent drop-shadow-2xl bg-gradient-to-b from-white/80 to-white/20 text-3xl md:text-4xl lg:text-6xl">
+              <p className="bg-clip-text pt-20 text-transparent drop-shadow-2xl bg-gradient-to-b from-white/80 to-white/20 text-5xl md:text-6xl lg:text-8xl">
                 {/* {slice.primary.usp} */}
                 Tribotics
               </p>
             </div>
             <div>
-              <p className="text-white font-thin text-lg md:text-xl lg:text-2xl">
+              <p className="text-white font-thin text-xl md:text-2xl lg:text-3xl">
                 {/* {slice.primary.tag_line} */}
                 Empowering Industry with Intelligent<FlipWords className="" words={words} />
               </p>
@@ -112,7 +112,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
         <div className="text-3xl mx-auto font-normal text-black dark:text-neutral-800">
           {/* We are a company that specializes in making <br /> robots? maybe? not sure... that are
           <FlipWords className="" words={words} /> */}
-          Empowering Industry with Intelligent<FlipWords className="" words={words} />
+          <p>We orchestrate cutting-edge robotic automation solutions <br /> that elevate industrial efficiency and productivity</p>
         </div>
         <div className="pt-10">
           <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-gradient-to-br from-gray-800 to-gray-900 px-6 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-50">
