@@ -10,6 +10,7 @@ import { twMerge } from "tailwind-merge";
 
 const dummyContent = [
   {
+    title: "Tribotics LTD",
     description: (
       <>
         <p>
@@ -25,7 +26,7 @@ const dummyContent = [
         </p>
         <br />
         <p>
-          Our commitment to excellence and broad expertise enables us to meet each client's unique needs, making Tribotics a trusted partner in the automation and control systems industry.
+          Our commitment to excellence and broad expertise enables us to meet each client&apos;s unique needs, making Tribotics a trusted partner in the automation and control systems industry.
         </p>
       </>
     ),
@@ -70,6 +71,9 @@ const About = ({ slice }: AboutProps): JSX.Element => {
         <div className="max-w-2xl mx-auto antialiased pt-4 relative min-h-screen">
           {dummyContent.map((item, index) => (
             <div key={`content-${index}`} className="mb-10">
+              <p className="text-3xl bold mb-4">
+              {item.title}
+            </p>
               <div className="text-lg prose prose-sm dark:prose-invert">
                 {item?.image && (
                   <Image
