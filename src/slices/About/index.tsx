@@ -11,12 +11,16 @@ import { twMerge } from "tailwind-merge";
 const dummyContent = [
   {
     title: "Tribotics LTD",
-    description: (
+    description2: (
       <>
         <p>
           Founded in 2003, Tribotics has grown from a specialist in designing and producing PLC-based control systems and electrical control panels to a premier provider of comprehensive turnkey solutions. Our expertise spans from initial concept development to on-site installation, catering to a diverse and global clientele, including industry giants such as Amazon (UK and Europe), Bergstrom Europe, Universal Studios (Orlando and Los Angeles), CyDen, and Sony UK, among others.
         </p>
         <br />
+      </>
+    ),
+    description: (
+      <>
         <p>
           Our state-of-the-art 60,000 sq. ft. manufacturing and assembly facility in South Wales is equipped to handle every aspect of project development internally. This includes a multidisciplinary design office, a fully equipped Electrical Control Panel shop, a dedicated fabrication area, a large assembly space, and a PLC/Embedded Systems development and training lab. This extensive in-house capability ensures we maintain control over quality and timelines, delivering exceptional results from start to finish.
         </p>
@@ -74,6 +78,7 @@ const About = ({ slice }: AboutProps): JSX.Element => {
               <p className="text-3xl bold mb-4">
               {item.title}
             </p>
+            {item.description2}
               <div className="text-lg prose prose-sm dark:prose-invert">
                 {item?.image && (
                   <Image
