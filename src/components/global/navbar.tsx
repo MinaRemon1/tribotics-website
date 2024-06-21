@@ -31,9 +31,9 @@ const Navbar = () => {
                 </div>
               </button>
             </Link> */}
-            <p className='text-white'>Home</p>
-            <p className='text-white'>About</p>
-            <p className='text-white'>Contact</p>
+            <Link href='/'><p className='text-white'>Home</p></Link>
+            <Link href='/about'><p className='text-white'>About</p></Link>
+            <Link href='/contact'><p className='text-white'>Contact</p></Link>
             <p className='text-white'>Blog</p>
             <p className='text-white'>Case Studies</p>
             <p className='text-white'>Recruitment</p>
