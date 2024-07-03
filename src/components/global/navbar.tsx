@@ -34,8 +34,8 @@ const Navbar = () => {
             <Link href='/'><p className='text-white'>Home</p></Link>
             <Link href='/about'><p className='text-white'>About</p></Link>
             <Link href='/contact'><p className='text-white'>Contact</p></Link>
-            <p className='text-white'>Blog</p>
-            <p className='text-white'>Case Studies</p>
+            <Link href='/blog'><p className='text-white'>Blog</p></Link>
+            <Link href='/case-studies'><p className='text-white'>Case Studies</p></Link>
             <p className='text-white'>Recruitment</p>
         </aside>
       </header>

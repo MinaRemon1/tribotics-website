@@ -1,19 +1,27 @@
 import Navbar from "@/components/global/navbar";
 import { BackgroundGradientAnimation2 } from "@/components/ui/bg-about";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
+import ContentList from "./ContentList";
+import { createClient } from "@/prismicio";
 
 /**
- * Props for `Contact`.
+ * Props for `Blog`.
  */
-export type ContactProps = SliceComponentProps<Content.ContactSlice>;
+export type BlogProps = SliceComponentProps<Content.BlogSlice>;
 
 /**
- * Component for "Contact" Slices.
+ * Component for "Blog" Slices.
  */
-const Contact = ({ slice }: ContactProps): JSX.Element => {
+const Blog = async ({ slice }: BlogProps): Promise<JSX.Element> => {
+  const client = createClient()
+  const blogPosts = await client.getAllByType("blog_post")
+  const caseStudies = await client.getAllByType("case_study")
+
+  const contentType = slice.primary.content_type || "Blog"
+
+  const items = contentType === "Blog" ? blogPosts : caseStudies;
+
   return (
     <section
       data-slice-type={slice.slice_type}
@@ -24,8 +32,8 @@ const Contact = ({ slice }: ContactProps): JSX.Element => {
         <BackgroundGradientAnimation2>
           <div className="absolute z-50 inset-0 flex flex-col items-start pl-[14%] justify-center text-white font-bold px-4 pointer-events-none text-center space-y-4">
             <div>
-              <p className="bg-clip-text pt-20 drop-shadow-2xl bg-gradient-to-b from-white/80 to-white/20 text-3xl md:text-4xl lg:text-6xl">
-                Contact Us
+              <p className="bg-clip-text pt-20 drop-shadow-2xl bg-gradient-to-b from-white/80 to-white/20 text-4xl md:text-5xl lg:text-7xl">
+                {slice.primary.heading}
               </p>
             </div>
           </div>
@@ -38,21 +46,9 @@ const Contact = ({ slice }: ContactProps): JSX.Element => {
         </div>
         </BackgroundGradientAnimation2>
         </div>
-        <div className="text-sm md:text-lg font-light text-center text-zinc-600">
-          Got a question? Shoot us a message!
-        </div>
-        <br />
-        <form action="https://formsubmit.co/mina@etherealai.tech" method="POST" className="flex flex-col justify-center items-center space-y-5 mx-5">
-                    {/* <input type="hidden" name="_next" value="https://yourdomain.co/thanks.html"></input> */}
-                    <input type="hidden" name="_cc" value="matt@treadsoft.co"></input>
-                    <input type="hidden" name="_captcha" value="false"></input>
-                    <Input name="Name" type="text" placeholder="Name" className="w-96 mr-5 ml-5 text-black" />
-                    <Input name="Email" type="email" placeholder="Email" className="w-96 mr-5 ml-5 text-black" />
-                    <textarea name="Message" placeholder="Message" className="w-96 h-32 mr-5 ml-5 text-black flex  rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" />
-                    <Button type="submit" variant="default" className="md:text-lg p-4 md:p-6 rounded-full font-semibold hover:text-zinc-200">Submit</Button>
-                </form>
+        <ContentList items={items} contentType={contentType} Image={slice.primary.image} />
     </section>
   );
 };
 
-export default Contact;
+export default Blog;

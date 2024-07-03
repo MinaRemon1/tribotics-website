@@ -55,7 +55,7 @@ const About = ({ slice }: AboutProps): JSX.Element => {
       <Navbar />
       <div className="relative w-full flex items-center justify-center">
         <BackgroundGradientAnimation2>
-          <div className="absolute z-50 inset-0 flex flex-col items-start pl-52 justify-center text-white font-bold px-4 pointer-events-none text-center space-y-4">
+          <div className="absolute z-50 inset-0 flex flex-col items-start pl-[14%] justify-center text-white font-bold px-4 pointer-events-none text-center space-y-4">
             <div>
               <p className="bg-clip-text pt-20 drop-shadow-2xl bg-gradient-to-b from-white/80 to-white/20 text-3xl md:text-4xl lg:text-6xl">
                 {slice.primary.heading}
