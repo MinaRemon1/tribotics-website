@@ -1,3 +1,4 @@
+"use client";
 import Navbar from "@/components/global/navbar";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import { Boxes } from "@/components/ui/background-boxes";
@@ -19,6 +20,7 @@ import { clients } from "@/lib/constant";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 import { InfiniteMovingCards2 } from "@/components/ui/infinite-moving-cards2";
 import Footer from "@/components/global/footer";
+import Globe from 'globe.gl';
 
 const testimonials = [
   {
@@ -52,21 +54,21 @@ const testimonials = [
   },
 ];
 
-// const World = dynamic(() => import("@/components/ui/globe").then((m) => m.World), {
-//   ssr: false,
-// });
+const World = dynamic(() => import("@/components/ui/globe").then((m) => m.World), {
+  ssr: false,
+});
  
 
   const globeConfig = {
-    pointSize: 4,
+    pointSize: 10,
     globeColor: "#062056",
     showAtmosphere: true,
     atmosphereColor: "#FFFFFF",
-    atmosphereAltitude: 0.1,
-    emissive: "#062056",
-    emissiveIntensity: 0.1,
+    atmosphereAltitude: 0.7,
+    emissive: "#063656",
+    emissiveIntensity: 1,
     shininess: 0.9,
-    polygonColor: "rgba(255,255,255,0.7)",
+    polygonColor: "white",
     ambientLight: "#38bdf8",
     directionalLeftLight: "#ffffff",
     directionalTopLight: "#ffffff",
@@ -518,36 +520,23 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
           speed="slow"
         />
       </div>
-      {/* <div className="flex flex-row items-center justify-center py-20 h-screen md:h-auto dark:bg-black bg-white relative w-full">
-      <div className="max-w-7xl mx-auto w-full relative overflow-hidden h-full md:h-[40rem] px-4">
-        <motion.div
-          initial={{
-            opacity: 0,
-            y: 20,
-          }}
-          animate={{
-            opacity: 1,
-            y: 0,
-          }}
-          transition={{
-            duration: 1,
-          }}
-          className="div"
-        >
+      <div className="hero--globe">
+      <div className="flex flex-row items-center justify-center py-20 h-screen md:h-auto dark:bg-black bg-white relative w-full">
+      <div className="max-w-7xl mx-auto w-full relative  h-full md:h-[40rem] px-4">
           <h2 className="text-center text-xl md:text-4xl font-bold text-black dark:text-white">
-            We sell soap worldwide
+            We have clients worldwide
           </h2>
-          <p className="text-center text-base md:text-lg font-normal text-neutral-700 dark:text-neutral-200 max-w-md mt-2 mx-auto">
+          {/* <p className="text-center text-base md:text-lg font-normal text-neutral-700 dark:text-neutral-200 max-w-md mt-2 mx-auto">
             This globe is interactive and customizable. Have fun with it, and
             don&apos;t forget to share it. :)
-          </p>
-        </motion.div>
-        <div className="absolute w-full bottom-0 inset-x-0 h-40 bg-gradient-to-b pointer-events-none select-none from-transparent dark:to-black to-white z-40" />
+          </p> */}
+        <div className="absolute w-full bottom-0 inset-x-0 h-40 z-40" />
         <div className="absolute w-full -bottom-20 h-72 md:h-full z-10">
           <World data={sampleArcs} globeConfig={globeConfig} />;
         </div>
       </div>
-    </div> */}
+    </div>
+    </div>
       <div className="max-w-5xl mx-auto px-8 mt-20 text-center flex items-center justify-center flex-col">
         <h2 className="text-black text-3xl md:text-4xl font-bold text-center">
           Our Services
