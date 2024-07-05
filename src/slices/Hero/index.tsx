@@ -514,12 +514,18 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
         </div>
       </div>
       <div className="h-[20rem] rounded-md flex flex-col w-full antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+        <br/>
+      <h2 className="text-black text-3xl md:text-4xl font-bold text-center">
+          Testimonials
+        </h2>
         <InfiniteMovingCards2
           items={testimonials}
           direction="left"
           speed="slow"
+          className="pb-20"
         />
       </div>
+      <br/><br/>
       <div className="hero--globe">
       <div className="flex flex-row items-center justify-center py-20 h-screen md:h-auto dark:bg-black bg-white relative w-full">
       <div className="max-w-7xl mx-auto w-full relative  h-full md:h-[40rem] px-4">
