@@ -522,7 +522,6 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
           items={testimonials}
           direction="left"
           speed="slow"
-          className="pb-20"
         />
       </div>
       <br/><br/>
