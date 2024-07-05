@@ -4,6 +4,7 @@ import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import ContentList from "./ContentList";
 import { createClient } from "@/prismicio";
+import Footer from "@/components/global/footer";
 
 /**
  * Props for `Blog`.
@@ -47,6 +48,7 @@ const Blog = async ({ slice }: BlogProps): Promise<JSX.Element> => {
         </BackgroundGradientAnimation2>
         </div>
         <ContentList items={items} contentType={contentType} Image={slice.primary.image} />
+        {/* <Footer/> */}
     </section>
   );
 };

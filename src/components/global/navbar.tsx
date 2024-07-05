@@ -36,7 +36,7 @@ const Navbar = () => {
             <Link href='/contact'><p className='text-white'>Contact</p></Link>
             <Link href='/blog'><p className='text-white'>Blog</p></Link>
             <Link href='/case-studies'><p className='text-white'>Case Studies</p></Link>
-            <p className='text-white'>Recruitment</p>
+            <p className='text-white'>Careers</p>
         </aside>
       </header>
     )

@@ -1,3 +1,4 @@
+import Footer from "@/components/global/footer";
 import Navbar from "@/components/global/navbar";
 import { BackgroundGradientAnimation2 } from "@/components/ui/bg-about";
 import { FlipWords } from "@/components/ui/flip-words";
@@ -91,10 +92,19 @@ const About = ({ slice }: AboutProps): JSX.Element => {
                 )}
                 {item.description}
               </div>
+              <div className="pt-10 pb-20">
+                <a href="/contact">
+                  <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-gradient-to-br from-gray-800 to-gray-900 px-6 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-50">
+                    Get In Touch
+                  </button>
+                </a>
+              </div>
             </div>
           ))}
         </div>
       </TracingBeam>
+      <br/>
+      <Footer/>
     </section>
   );
 };

@@ -1,3 +1,4 @@
+import Footer from "@/components/global/footer";
 import Navbar from "@/components/global/navbar";
 import { BackgroundGradientAnimation2 } from "@/components/ui/bg-about";
 import { Button } from "@/components/ui/button";
@@ -42,7 +43,7 @@ const Contact = ({ slice }: ContactProps): JSX.Element => {
           Got a question? Shoot us a message!
         </div>
         <br />
-        <form action="https://formsubmit.co/mina@etherealai.tech" method="POST" className="flex flex-col justify-center items-center space-y-5 mx-5">
+        <form action="https://formsubmit.co/mina@etherealai.tech" method="POST" className="flex flex-col justify-center items-center space-y-5 mx-5 pb-20">
                     {/* <input type="hidden" name="_next" value="https://yourdomain.co/thanks.html"></input> */}
                     <input type="hidden" name="_cc" value="matt@treadsoft.co"></input>
                     <input type="hidden" name="_captcha" value="false"></input>
@@ -51,6 +52,7 @@ const Contact = ({ slice }: ContactProps): JSX.Element => {
                     <textarea name="Message" placeholder="Message" className="w-96 h-32 mr-5 ml-5 text-black flex  rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" />
                     <Button type="submit" variant="default" className="md:text-lg p-4 md:p-6 rounded-full font-semibold hover:text-zinc-200">Submit</Button>
                 </form>
+                <Footer/>
     </section>
   );
 };
