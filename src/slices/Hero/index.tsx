@@ -467,7 +467,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
         <BackgroundGradientAnimation>
           <div className="absolute z-50 inset-0 flex flex-col items-start pl-[14%] justify-center text-white font-bold px-4 pointer-events-none text-center space-y-4">
             <div>
-              <p className="bg-clip-text pt-20 text-transparent drop-shadow-2xl bg-gradient-to-b from-white/80 to-white/20 text-5xl md:text-6xl lg:text-8xl">
+              <p className="bg-clip-text pt-12 text-transparent drop-shadow-2xl bg-gradient-to-b from-white/80 to-white/20 text-5xl md:text-6xl lg:text-8xl">
                 {/* {slice.primary.usp} */}
                 Tribotics
               </p>
@@ -478,9 +478,11 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
                 Empowering Industry with Intelligent<FlipWords className="" words={words} />
             </div>
             <div className="pt-20">
-              <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-gradient-to-br from-gray-800 to-gray-900 px-6 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-50">
-                Learn more
-              </button>
+              <a href="/contact" className="">
+                <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-gradient-to-br from-gray-800 to-gray-900 px-6 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-50">
+                  Contact Us
+                </button>
+              </a>
             </div>
           </div>
           <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-0 transform rotate-180">
@@ -492,7 +494,8 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
         </div>
         </BackgroundGradientAnimation>
       </div>
-      <div className="flex items-center justify-center w-full h-full">
+
+      <div className="flex items-center pt-14 justify-center w-full h-full">
         <InfiniteMovingCards
           className="w-full"
           items={clients}
@@ -513,9 +516,9 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
           </button>
         </div>
       </div>
-      <div className="h-[20rem] rounded-md flex flex-col w-full antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+      <div className="h-[26rem] rounded-md flex flex-col w-full antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative">
         <br/>
-      <h2 className="text-black text-3xl md:text-4xl font-bold text-center">
+      <h2 className="text-black text-3xl md:text-4xl pb-6 font-bold text-center">
           Testimonials
         </h2>
         <InfiniteMovingCards2
