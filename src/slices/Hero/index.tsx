@@ -76,7 +76,7 @@ const World = dynamic(() => import("@/components/ui/globe").then((m) => m.World)
     arcTime: 1000,
     arcLength: 0.9,
     rings: 1,
-    maxRings: 3,
+    maxRings: 6,
     initialPosition: { lat: 22.3193, lng: 114.1694 },
     autoRotate: true,
     autoRotateSpeed: 0.5,
