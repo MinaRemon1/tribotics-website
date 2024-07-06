@@ -77,12 +77,13 @@ const World = dynamic(() => import("@/components/ui/globe").then((m) => m.World)
     arcLength: 0.9,
     rings: 1,
     maxRings: 6,
+    labelText: "Cairo",
     initialPosition: { lat: 22.3193, lng: 114.1694 },
     autoRotate: true,
     autoRotateSpeed: 0.5,
   };
   
-  const colors = ["#06b6d4", "#3b82f6", "#6366f1"];
+  const colors = ["#06b6d4", "#3b82f6", "#6366f1", "rgb(108, 0, 162)"];
   const sampleArcs = [
     {
       order: 1,
@@ -477,12 +478,12 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
                 {/* {slice.primary.tag_line} */}
                 Empowering Industry with Intelligent<FlipWords className="" words={words} />
             </div>
-            <div className="pt-20">
-              <a href="/contact" className="">
+            <div className="pt-10">
+              <Link href="/contact">
                 <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-gradient-to-br from-gray-800 to-gray-900 px-6 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-50">
                   Contact Us
                 </button>
-              </a>
+              </Link>
             </div>
           </div>
           <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-0 transform rotate-180">
@@ -511,9 +512,11 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       </div>
 
         <div className="pt-10">
-          <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-gradient-to-br from-gray-800 to-gray-900 px-6 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-50">
-            More about us
-          </button>
+          <Link href="/about">
+            <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-gradient-to-br from-gray-800 to-gray-900 px-6 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-50">
+              More about us
+            </button>
+          </Link>
         </div>
       </div>
       <div className="h-[26rem] rounded-md flex flex-col w-full antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative">
@@ -530,11 +533,11 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       <br/><br/>
       <div className="hero--globe">
       <div className="flex flex-row items-center justify-center py-20 h-screen md:h-auto dark:bg-black bg-white relative w-full">
-      <div className="max-w-7xl mx-auto w-full relative  h-full md:h-[40rem] px-4">
+      <div className="max-w-7xl mx-auto w-full relative  h-full md:h-[45rem] px-4">
           <h2 className="text-center text-xl md:text-4xl font-bold text-black dark:text-white">
             Global Clients
           </h2>
-          
+
         <div className="absolute w-full bottom-0 inset-x-0 h-40 z-40" />
         <div className="absolute w-full -bottom-20 h-72 md:h-full z-10">
           <World data={sampleArcs} globeConfig={globeConfig} />;
