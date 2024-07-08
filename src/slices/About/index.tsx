@@ -49,6 +49,7 @@ export type AboutProps = SliceComponentProps<Content.AboutSlice>;
  */
 const About = ({ slice }: AboutProps): JSX.Element => {
   return (
+    <>
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
@@ -104,8 +105,9 @@ const About = ({ slice }: AboutProps): JSX.Element => {
         </div>
       </TracingBeam>
       <br/>
-      <Footer/>
     </section>
+    <Footer/>
+    </>
   );
 };
 

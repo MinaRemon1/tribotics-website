@@ -32,7 +32,7 @@ export default function ContentList({ items, contentType, Image }: ContentListPr
                         alt={item.data.image.alt || item.data.title}
                         width={64}
                         height={64}
-                        className='w-16 h-16 object-cover mr-4 rounded-lg'
+                        className='w-16 h-16 object-cover mr-4 rounded-md'
                       />
                     )}
                     <div>
