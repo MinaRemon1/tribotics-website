@@ -49,6 +49,7 @@ const Blog = async ({ slice }: BlogProps): Promise<JSX.Element> => {
         </div>
         <ContentList items={items} contentType={contentType} Image={slice.primary.image} />
         {/* <Footer/> */}
+        {/* <Footer/> */}
     </section>
   );
 };
