@@ -106,6 +106,7 @@ const About = ({ slice }: AboutProps): JSX.Element => {
       </TracingBeam>
       <br/>
     </section>
+    <br/><br/>
     <Footer/>
     </>
   );

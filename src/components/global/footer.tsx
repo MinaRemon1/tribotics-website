@@ -22,11 +22,11 @@ const footer = () => {
     <h6 className="footer-title">Contact</h6>
     <p>
         {/* <span className='font-extrabold'>Contact</span> */}
-        sales@tribotics.co.uk
+        <a href="mailto:sales@tribotics.co.uk">sales@tribotics.co.uk</a>
         <br/><br/>
-        +44 (0)1685 350617
+        <a href='tel:+44 (0)1685 350617'>+44 (0)1685 350617</a>
         <br/>
-        +44 (0)7833 128264
+        <a href='tel:+44 (0)7833 128264'>+44 (0)7833 128264</a>
     </p>
   </nav>
   <nav>
@@ -45,9 +45,9 @@ const footer = () => {
   </nav>
   <nav>
     <h6 className="footer-title">Company</h6>
-    <a className="link link-hover">About us</a>
-    <a className="link link-hover">Contact</a>
-    <a className="link link-hover">Blog</a>
+    <a className="link link-hover" href='/about'>About us</a>
+    <a className="link link-hover" href='/contact'>Contact</a>
+    <a className="link link-hover" href='/blog'>Blog</a>
     <a className="link link-hover">Careers</a>
   </nav>
   <nav>

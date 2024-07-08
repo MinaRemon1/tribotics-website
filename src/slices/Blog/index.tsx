@@ -48,7 +48,8 @@ const Blog = async ({ slice }: BlogProps): Promise<JSX.Element> => {
         </BackgroundGradientAnimation2>
         </div>
         <ContentList items={items} contentType={contentType} Image={slice.primary.image} />
-        {/* <Footer/> */}
+        <br/><br/><br/><br/>
+        <Footer/>
         {/* <Footer/> */}
     </section>
   );

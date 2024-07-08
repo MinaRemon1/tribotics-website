@@ -545,7 +545,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       <div className="flex flex-row items-center justify-center py-20 h-screen md:h-auto dark:bg-black bg-white relative w-full">
       <div className="max-w-7xl mx-auto w-full relative  h-full md:h-[45rem] px-4">
           <h2 className="text-center text-xl md:text-4xl font-bold text-black dark:text-white">
-            Global Clients
+            Our Global Clients
           </h2>
 
         <div className="absolute w-full bottom-0 inset-x-0 h-40 z-40" />
