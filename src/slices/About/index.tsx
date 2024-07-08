@@ -56,7 +56,7 @@ const About = ({ slice }: AboutProps): JSX.Element => {
       <Navbar />
       <div className="relative w-full flex items-center justify-center">
         <BackgroundGradientAnimation2>
-          <div className="absolute z-50 inset-0 flex flex-col items-start pl-[14%] justify-center text-white font-bold px-4 pointer-events-none text-center space-y-4">
+          <div className="absolute z-50 inset-0 flex flex-col items-start pl-[20%] pb-[4%] justify-center text-white font-bold px-4 pointer-events-none text-center space-y-4">
             <div>
               <p className="bg-clip-text pt-20 drop-shadow-2xl bg-gradient-to-b from-white/80 to-white/20 text-3xl md:text-4xl lg:text-6xl">
                 {slice.primary.heading}
@@ -73,14 +73,14 @@ const About = ({ slice }: AboutProps): JSX.Element => {
         </BackgroundGradientAnimation2>
       </div>
       <TracingBeam className="px-6">
-        <div className="max-w-2xl mx-auto antialiased pt-4 relative min-h-screen">
+        <div className="max-w-2xl mx-auto text-lg antialiased pt-4 relative min-h-screen">
           {dummyContent.map((item, index) => (
             <div key={`content-${index}`} className="mb-10">
               <p className="text-3xl bold mb-4">
               {item.title}
             </p>
             {item.description2}
-              <div className="text-lg prose prose-sm dark:prose-invert">
+              <div className="text-lg">
                 {item?.image && (
                   <Image
                     src={item.image}
