@@ -41,7 +41,7 @@ const Contact = ({ slice }: ContactProps): JSX.Element => {
         </div>
         </BackgroundGradientAnimation2>
         </div>
-        <div className="flex-grow">
+        <div className="flex-grow px-[10%]">
         <div className="text-sm md:text-lg font-light text-center text-zinc-600">
           Got a question? Shoot us a message!
         </div>
