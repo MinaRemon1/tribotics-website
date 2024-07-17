@@ -1,0 +1,30 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "treated",
+				"type": "Text"
+			},
+			"effective_date": {
+				"__TYPE__": "FieldContent",
+				"type": "Date",
+				"value": "2024-03-14"
+			},
+			"content": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Dolor consectetur adipisicing cillum aliqua eiusmod laborum. Incididunt sunt veniam commodo sit eu Lorem velit nulla Lorem enim excepteur. Ea magna ea cupidatat ex do nulla elit anim nostrud laborum incididunt."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

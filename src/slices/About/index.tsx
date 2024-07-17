@@ -1,3 +1,4 @@
+import Header from "@/components/global/Header";
 import Footer from "@/components/global/footer";
 import Navbar from "@/components/global/navbar";
 import { BackgroundGradientAnimation2 } from "@/components/ui/bg-about";
@@ -50,11 +51,12 @@ export type AboutProps = SliceComponentProps<Content.AboutSlice>;
 const About = ({ slice }: AboutProps): JSX.Element => {
   return (
     <>
+    <div className="flex flex-col min-h-screen">
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <Navbar />
+      <Header />
       <div className="relative w-full flex items-center justify-center">
         <BackgroundGradientAnimation2>
           <div className="absolute z-50 inset-0 flex flex-col items-start pl-[20%] pb-[4%] justify-center text-white font-bold px-4 pointer-events-none text-center space-y-4">
@@ -73,7 +75,7 @@ const About = ({ slice }: AboutProps): JSX.Element => {
           </div>
         </BackgroundGradientAnimation2>
       </div>
-      <TracingBeam className="px-6">
+      <TracingBeam className="px-6 flex-grow">
         <div className="max-w-2xl mx-auto text-lg antialiased pt-4 relative min-h-screen">
           {dummyContent.map((item, index) => (
             <div key={`content-${index}`} className="mb-10">
@@ -108,6 +110,7 @@ const About = ({ slice }: AboutProps): JSX.Element => {
     </section>
     <br/><br/>
     <Footer/>
+    </div>
     </>
   );
 };

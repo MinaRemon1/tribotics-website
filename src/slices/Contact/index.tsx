@@ -1,3 +1,4 @@
+import Header from "@/components/global/Header";
 import Footer from "@/components/global/footer";
 import Navbar from "@/components/global/navbar";
 import { BackgroundGradientAnimation2 } from "@/components/ui/bg-about";
@@ -20,7 +21,8 @@ const Contact = ({ slice }: ContactProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <Navbar />
+      <div className="flex flex-col min-h-screen">
+      <Header />
       <div className="relative w-full flex items-center justify-center">
         <BackgroundGradientAnimation2>
           <div className="absolute z-50 inset-0 flex flex-col items-start pl-[20%] pb-[4%] justify-center text-white font-bold px-4 pointer-events-none text-center space-y-4">
@@ -39,6 +41,7 @@ const Contact = ({ slice }: ContactProps): JSX.Element => {
         </div>
         </BackgroundGradientAnimation2>
         </div>
+        <div className="flex-grow">
         <div className="text-sm md:text-lg font-light text-center text-zinc-600">
           Got a question? Shoot us a message!
         </div>
@@ -52,7 +55,9 @@ const Contact = ({ slice }: ContactProps): JSX.Element => {
                     <textarea name="Message" placeholder="Message" className="w-96 h-32 mr-5 ml-5 text-black flex  rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" />
                     <Button type="submit" variant="default" className="md:text-lg p-4 md:p-6 rounded-full font-semibold hover:text-zinc-200">Submit</Button>
                 </form>
+                </div>
                 <Footer/>
+                </div>
     </section>
   );
 };

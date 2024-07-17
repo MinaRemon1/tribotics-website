@@ -5,6 +5,7 @@ import { SliceComponentProps } from "@prismicio/react";
 import ContentList from "./ContentList";
 import { createClient } from "@/prismicio";
 import Footer from "@/components/global/footer";
+import Header from "@/components/global/Header";
 
 /**
  * Props for `Blog`.
@@ -28,7 +29,8 @@ const Blog = async ({ slice }: BlogProps): Promise<JSX.Element> => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <Navbar />
+      <div className="flex flex-col min-h-screen">
+      <Header />
       <div className="relative w-full flex items-center justify-center">
         <BackgroundGradientAnimation2>
           <div className="absolute z-50 inset-0 flex flex-col items-start pl-[20%] pb-[4%] justify-center text-white font-bold px-4 pointer-events-none text-center space-y-4">
@@ -47,10 +49,12 @@ const Blog = async ({ slice }: BlogProps): Promise<JSX.Element> => {
         </div>
         </BackgroundGradientAnimation2>
         </div>
-        <ContentList items={items} contentType={contentType} Image={slice.primary.image} />
+        <div className="flex-grow">
+          <ContentList items={items} contentType={contentType} Image={slice.primary.image} />
+        </div>
         <br/><br/><br/><br/>
         <Footer/>
-        {/* <Footer/> */}
+        </div>
     </section>
   );
 };

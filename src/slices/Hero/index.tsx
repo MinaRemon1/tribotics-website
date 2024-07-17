@@ -21,6 +21,7 @@ import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 import { InfiniteMovingCards2 } from "@/components/ui/infinite-moving-cards2";
 import Footer from "@/components/global/footer";
 import Globe from 'globe.gl';
+import Header from "@/components/global/Header";
 
 const testimonials = [
   {
@@ -463,7 +464,8 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <Navbar />
+      {/* <Navbar /> */}
+      <Header />
       <div className="relative w-full flex items-center justify-center">
         <BackgroundGradientAnimation>
           <div className="absolute z-50 inset-0 flex flex-col items-start pl-[14%] justify-center text-white font-bold px-4 pointer-events-none text-center space-y-4">
@@ -515,7 +517,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
         />
       </div>
       <div className="h-[20rem] flex flex-col justify-center items-center px-4">
-      <div className="text-3xl mx-auto font-normal items-center content-center justify-center text-black dark:text-neutral-800 text-center">
+      <div className="text-xl md:text-xl lg:text-3xl mx-auto font-normal items-center content-center justify-center text-black dark:text-neutral-800 text-center">
         <h1 className="text-center">
           We orchestrate cutting-edge robotic automation solutions <br /> that elevate industrial efficiency and productivity
         </h1>
@@ -541,7 +543,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
         />
       </div>
       <br/><br/>
-      <div className="hero--globe">
+      {/* <div className="hero--globe">
       <div className="flex flex-row items-center justify-center py-20 h-screen md:h-auto dark:bg-black bg-white relative w-full">
       <div className="max-w-7xl mx-auto w-full relative  h-full md:h-[45rem] px-4">
           <h2 className="text-center text-xl md:text-4xl font-bold text-black dark:text-white">
@@ -554,12 +556,13 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
         </div>
       </div>
     </div>
-    </div>
-      <div className="max-w-5xl mx-auto px-8 mt-20 text-center flex items-center justify-center flex-col">
+    </div> */}
+      {/* <div className="max-w-5xl mx-auto px-8 mt-20 text-center flex items-center justify-center flex-col">
         <h2 className="text-black text-3xl md:text-4xl font-bold text-center">
           Our Services
         </h2>
-        <div className="h-[20rem] flex items-center justify-center flex-col grid-cols-3 md:flex-row gap-8 mr-5 ml-5">
+        
+        <div className="h-[30rem] flex items-center justify-center flex-col grid-cols-3 md:flex-row gap-8 mr-5 ml-5">
           <DirectionAwareHover imageUrl="/pic1.jpg">
             <p className="font-bold text-xl">Service 1</p>
           </DirectionAwareHover>
@@ -568,21 +571,19 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
           </DirectionAwareHover>
           <DirectionAwareHover imageUrl="/pic3.jpg">
             <p className="font-bold text-xl">Service 3</p>
-          </DirectionAwareHover>
-          </div>
-          <div className="h-[13rem] flex items-center justify-center flex-col grid-cols-3 md:flex-row gap-8 mr-5 ml-5">
-          <DirectionAwareHover imageUrl="/pic1.jpg">
-            <p className="font-bold text-xl">Service 4</p>
+          </DirectionAwareHover> */}
+          {/* <DirectionAwareHover imageUrl="/pic1.jpg">
+            <p className="font-bold text-xl">Service 1</p>
           </DirectionAwareHover>
           <DirectionAwareHover imageUrl="/pic2.jpg">
-            <p className="font-bold text-xl">Service 5</p>
+            <p className="font-bold text-xl">Service 2</p>
           </DirectionAwareHover>
           <DirectionAwareHover imageUrl="/pic3.jpg">
-            <p className="font-bold text-xl">Service 6</p>
-          </DirectionAwareHover>
-        </div>
-      </div>
-      <br /><br /><br />
+            <p className="font-bold text-xl">Service 3</p>
+          </DirectionAwareHover> */}
+          {/* </div>
+      </div> */}
+      {/* <br /><br /><br />
       <h2 className="text-black pt-20 text-3xl md:text-4xl font-bold text-center">
           Section 3
         </h2>
@@ -606,7 +607,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
         imageClassName="rounded-md"
       />
     </div>
-      <br /><br /><br /><br />
+      <br /><br /><br /><br /> */}
       <Footer/>
       {/* <header className="right-0 left-0 top-0 pl-3 pr-3 md:pl-10 md:pr-10 pt-10 pb-6 px-4 bg-black backdrop-blur-lg z-[100] flex items-center border-neutral-900 justify-between w-screen">
         <aside className="flex items-center gap-[2px]">

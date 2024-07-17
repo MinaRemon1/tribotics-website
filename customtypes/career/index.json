@@ -1,35 +1,45 @@
 {
   "format": "page",
-  "id": "page",
-  "label": "page",
+  "id": "career",
+  "label": "Career",
   "repeatable": true,
   "status": true,
   "json": {
     "Main": {
+      "title": {
+        "type": "Text",
+        "config": {
+          "label": "Title",
+          "placeholder": ""
+        }
+      },
       "uid": {
         "config": {
           "label": "UID"
         },
         "type": "UID"
       },
+      "date": {
+        "type": "Date",
+        "config": {
+          "label": "Date",
+          "placeholder": ""
+        }
+      },
+      "image": {
+        "type": "Image",
+        "config": {
+          "label": "Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "privacy_policy": {
-              "type": "SharedSlice"
-            },
-            "careers": {
-              "type": "SharedSlice"
-            },
-            "blog": {
-              "type": "SharedSlice"
-            },
-            "contact": {
-              "type": "SharedSlice"
-            },
-            "about": {
+            "text_block": {
               "type": "SharedSlice"
             }
           }
@@ -37,6 +47,13 @@
       }
     },
     "SEO & Metadata": {
+      "meta_title": {
+        "config": {
+          "label": "Meta Title",
+          "placeholder": "A title of the page used for social media and search engines"
+        },
+        "type": "Text"
+      },
       "meta_description": {
         "config": {
           "label": "Meta Description",
@@ -54,13 +71,6 @@
           "thumbnails": []
         },
         "type": "Image"
-      },
-      "meta_title": {
-        "config": {
-          "label": "Meta Title",
-          "placeholder": "A title of the page used for social media and search engines"
-        },
-        "type": "Text"
       }
     }
   }

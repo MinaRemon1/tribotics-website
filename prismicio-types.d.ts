@@ -102,6 +102,100 @@ export type BlogPostDocument<Lang extends string = string> =
     Lang
   >;
 
+type CareerDocumentDataSlicesSlice = TextBlockSlice;
+
+/**
+ * Content for Career documents
+ */
+interface CareerDocumentData {
+  /**
+   * Title field in *Career*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: career.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Date field in *Career*
+   *
+   * - **Field Type**: Date
+   * - **Placeholder**: *None*
+   * - **API ID Path**: career.date
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#date
+   */
+  date: prismic.DateField;
+
+  /**
+   * Image field in *Career*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: career.image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Slice Zone field in *Career*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: career.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<CareerDocumentDataSlicesSlice> /**
+   * Meta Title field in *Career*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: career.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *Career*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: career.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Career*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: career.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * Career document from Prismic
+ *
+ * - **API ID**: `career`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type CareerDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<CareerDocumentData>, "career", Lang>;
+
 type CaseStudyDocumentDataSlicesSlice = ImageBlockSlice | TextBlockSlice;
 
 /**
@@ -265,7 +359,12 @@ export type HomepageDocument<Lang extends string = string> =
     Lang
   >;
 
-type PageDocumentDataSlicesSlice = BlogSlice | ContactSlice | AboutSlice;
+type PageDocumentDataSlicesSlice =
+  | PrivacyPolicySlice
+  | CareersSlice
+  | BlogSlice
+  | ContactSlice
+  | AboutSlice;
 
 /**
  * Content for page documents
@@ -328,6 +427,7 @@ export type PageDocument<Lang extends string = string> =
 
 export type AllDocumentTypes =
   | BlogPostDocument
+  | CareerDocument
   | CaseStudyDocument
   | HomepageDocument
   | PageDocument;
@@ -477,6 +577,51 @@ type BlogSliceVariation = BlogSliceDefault;
 export type BlogSlice = prismic.SharedSlice<"blog", BlogSliceVariation>;
 
 /**
+ * Primary content in *Careers → Default → Primary*
+ */
+export interface CareersSliceDefaultPrimary {
+  /**
+   * Heading field in *Careers → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: careers.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for Careers Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CareersSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<CareersSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Careers*
+ */
+type CareersSliceVariation = CareersSliceDefault;
+
+/**
+ * Careers Shared Slice
+ *
+ * - **API ID**: `careers`
+ * - **Description**: Careers
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CareersSlice = prismic.SharedSlice<
+  "careers",
+  CareersSliceVariation
+>;
+
+/**
  * Default variation for Contact Slice
  *
  * - **API ID**: `default`
@@ -604,6 +749,71 @@ export type ImageBlockSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *PrivacyPolicy → Default → Primary*
+ */
+export interface PrivacyPolicySliceDefaultPrimary {
+  /**
+   * Title field in *PrivacyPolicy → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: privacy_policy.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Effective Date field in *PrivacyPolicy → Default → Primary*
+   *
+   * - **Field Type**: Date
+   * - **Placeholder**: *None*
+   * - **API ID Path**: privacy_policy.default.primary.effective_date
+   * - **Documentation**: https://prismic.io/docs/field#date
+   */
+  effective_date: prismic.DateField;
+
+  /**
+   * Content field in *PrivacyPolicy → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: privacy_policy.default.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+}
+
+/**
+ * Default variation for PrivacyPolicy Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PrivacyPolicySliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<PrivacyPolicySliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *PrivacyPolicy*
+ */
+type PrivacyPolicySliceVariation = PrivacyPolicySliceDefault;
+
+/**
+ * PrivacyPolicy Shared Slice
+ *
+ * - **API ID**: `privacy_policy`
+ * - **Description**: PrivacyPolicy
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PrivacyPolicySlice = prismic.SharedSlice<
+  "privacy_policy",
+  PrivacyPolicySliceVariation
+>;
+
+/**
  * Primary content in *TextBlock → Default → Primary*
  */
 export interface TextBlockSliceDefaultPrimary {
@@ -661,6 +871,9 @@ declare module "@prismicio/client" {
       BlogPostDocument,
       BlogPostDocumentData,
       BlogPostDocumentDataSlicesSlice,
+      CareerDocument,
+      CareerDocumentData,
+      CareerDocumentDataSlicesSlice,
       CaseStudyDocument,
       CaseStudyDocumentData,
       CaseStudyDocumentDataSlicesSlice,
@@ -679,6 +892,10 @@ declare module "@prismicio/client" {
       BlogSliceDefaultPrimary,
       BlogSliceVariation,
       BlogSliceDefault,
+      CareersSlice,
+      CareersSliceDefaultPrimary,
+      CareersSliceVariation,
+      CareersSliceDefault,
       ContactSlice,
       ContactSliceVariation,
       ContactSliceDefault,
@@ -690,6 +907,10 @@ declare module "@prismicio/client" {
       ImageBlockSliceDefaultPrimary,
       ImageBlockSliceVariation,
       ImageBlockSliceDefault,
+      PrivacyPolicySlice,
+      PrivacyPolicySliceDefaultPrimary,
+      PrivacyPolicySliceVariation,
+      PrivacyPolicySliceDefault,
       TextBlockSlice,
       TextBlockSliceDefaultPrimary,
       TextBlockSliceVariation,
