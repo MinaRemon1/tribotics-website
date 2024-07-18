@@ -42,6 +42,7 @@ const Careers = async ({ slice }: CareersProps): Promise<JSX.Element> => {
       </div>
       <div className="flex-grow">
         <ContentList items={careers} />
+        <br/><br/>
       </div>
       <Footer />
     </div>
