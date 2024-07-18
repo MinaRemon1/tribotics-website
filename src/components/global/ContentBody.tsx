@@ -34,7 +34,7 @@ export default function ContentBody({page}: {
     <Header />
     <div className="relative w-full flex items-center justify-center">
         <BackgroundGradientAnimation2>
-          <div className="absolute z-50 inset-0 flex flex-col items-start pt-[15%] pl-[10%] pb-[2%] justify-center text-zinc-500 font-bold px-4 pointer-events-none text-center space-y-4">
+          <div className="absolute z-50 inset-0 flex flex-col items-start pt-[10%] pl-[10%] pb-[2%] justify-center text-zinc-500 font-bold px-4 pointer-events-none text-center space-y-4">
             <div>
               <Heading className="text-2xl text-slate-200" as="h3">{page.data.title}</Heading>
               {/* <div className="flex gap-4 text-purple-600 text-xl font-bold">
