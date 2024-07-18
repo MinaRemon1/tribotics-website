@@ -2,9 +2,11 @@
 import { useEffect, useRef, useState } from "react";
 import { Color, Scene, Fog, PerspectiveCamera, Vector3 } from "three";
 import ThreeGlobe from "three-globe";
+import ObjAccessor from "three-globe"
 import { useThree, Object3DNode, Canvas, extend } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import countries from "@/data/globe.json";
+
 declare module "@react-three/fiber" {
   interface ThreeElements {
     threeGlobe: Object3DNode<ThreeGlobe, typeof ThreeGlobe>;
@@ -12,6 +14,21 @@ declare module "@react-three/fiber" {
 }
 
 extend({ ThreeGlobe });
+
+interface LabelData {
+  latitude: number;
+  longitude: number;
+  text: string;
+  color: string;
+  altitude?: number;
+  size?: number;
+  rotation?: number;
+  resolution?: number;
+  includeDot?: boolean;
+  dotRadius?: number;
+}
+
+
 
 const RING_PROPAGATION_SPEED = 3;
 const aspect = 1.2;
@@ -56,11 +73,12 @@ export type GlobeConfig = {
 interface WorldProps {
   globeConfig: GlobeConfig;
   data: Position[];
+  labels: LabelData[];
 }
 
 let numbersOfRings = [0];
 
-export function Globe({ globeConfig, data }: WorldProps) {
+export function Globe({ globeConfig, data, labels }: WorldProps) {
   const [globeData, setGlobeData] = useState<
     | {
         size: number;
@@ -95,8 +113,34 @@ export function Globe({ globeConfig, data }: WorldProps) {
     if (globeRef.current) {
       _buildData();
       _buildMaterial();
+      _buildLabels();
     }
   }, [globeRef.current]);
+
+  const _buildLabels = () => {
+    if (!globeRef.current || !globeData) return;
+  
+    globeRef.current
+      .labelsData(
+        labels.map((label) => ({
+          latitude: label.latitude,
+          longitude: label.longitude,
+          text: label.text.toString(),
+          color: label.color,
+        }))
+      )
+      .labelLat((d) => (d as LabelData).latitude)
+      .labelLng((d) => (d as LabelData).longitude)
+      .labelText((d) => (d as LabelData).text)
+      .labelColor((d) => (d as LabelData).color)
+      .labelAltitude(0.1) // Adjust as needed
+      .labelSize(2) // Adjust as needed
+      .labelRotation(0) // Adjust as needed
+      .labelResolution(8) // Adjust as needed
+      .labelIncludeDot(true) // Adjust as needed
+      .labelDotRadius(1) // Adjust as needed
+      .labelsTransitionDuration(200); // Adjust as needed
+  };  
 
   const _buildMaterial = () => {
     if (!globeRef.current) return;
