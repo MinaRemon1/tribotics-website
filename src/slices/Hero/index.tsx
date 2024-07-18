@@ -108,7 +108,55 @@ const World = dynamic(() => import("@/components/ui/globe").then((m) => m.World)
   {
     latitude: 40.0,
     longitude: -4.0,
-    text: "France",
+    text: "Spain",
+    color: "White",
+  },
+  {
+    latitude: 51.0,
+    longitude: 9.0,
+    text: "Germany",
+    color: "White",
+  },
+  {
+    latitude: 53.0,
+    longitude: 8.0,
+    text: "Ireland",
+    color: "White",
+  },
+  {
+    latitude: 42.8333,
+    longitude: 12.8333,
+    text: "Italy",
+    color: "White",
+  },
+  {
+    latitude: 52.0,
+    longitude: 20.0,
+    text: "Poland",
+    color: "White",
+  },
+  {
+    latitude: 49.75,
+    longitude: 15.5,
+    text: "Czech Republic",
+    color: "White",
+  },
+  {
+    latitude: 48.6667,
+    longitude: 19.5,
+    text: "Slovakia",
+    color: "White",
+  },
+  {
+    latitude: -27.0,
+    longitude: 133.0,
+    text: "Australia",
+    color: "White",
+  },
+  {
+    latitude: 24.4539,
+    longitude: 54.3773,
+    text: "Abu Dhabi",
     color: "White",
   },
 ]
@@ -221,18 +269,18 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       </div>
       <br/><br/><br/><br/>
       <div className="hero--globe">
-  <div className="flex flex-col items-center justify-center md:h-auto dark:bg-black bg-white relative w-full overflow-x-hidden">
-    <div className="max-w-7xl mx-auto w-full relative flex-grow flex-shrink h-[25rem] md:h-[45rem] pl-2 box-border">
-      <h2 className="text-center text-3xl md:text-4xl font-bold text-black dark:text-white">
-        Our Global Clients
-      </h2>
-      <div className="absolute w-full bottom-0 inset-x-0 h-40 z-40" />
-      <div className="absolute w-full bottom-0 md:bottom-0 h-96 md:h-full z-10">
-        <World data={sampleArcs} globeConfig={globeConfig} labels={labels} />
+        <div className="flex flex-col items-center justify-center md:h-auto dark:bg-black bg-white relative w-full overflow-x-hidden">
+          <div className="max-w-7xl mx-auto w-full relative flex-grow flex-shrink h-[25rem] md:h-[45rem] pl-2 box-border">
+            <h2 className="text-center text-3xl md:text-4xl font-bold text-black dark:text-white">
+              Our Global Clients
+            </h2>
+            <div className="absolute w-full bottom-0 inset-x-0 h-40 z-40" />
+            <div className="absolute w-full bottom-0 md:bottom-0 h-96 md:h-full z-10">
+              <World data={sampleArcs} globeConfig={globeConfig} labels={labels} />
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</div>
       <div className="max-w-5xl mx-auto px-8 mt-20 text-center flex items-center justify-center flex-col">
         <h2 className="text-black text-3xl md:text-4xl font-bold text-center">
           Our Services
