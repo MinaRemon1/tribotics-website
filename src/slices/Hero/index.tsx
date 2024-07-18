@@ -542,21 +542,22 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
           speed="slow"
         />
       </div>
-      <br/><br/>
-      {/* <div className="hero--globe">
-      <div className="flex flex-row items-center justify-center py-20 h-screen md:h-auto dark:bg-black bg-white relative w-full">
-      <div className="max-w-7xl mx-auto w-full relative  h-full md:h-[45rem] px-4">
-          <h2 className="text-center text-xl md:text-4xl font-bold text-black dark:text-white">
-            Our Global Clients
-          </h2>
-
-        <div className="absolute w-full bottom-0 inset-x-0 h-40 z-40" />
-        <div className="absolute w-full -bottom-20 h-72 md:h-full z-10">
-          <World data={sampleArcs} globeConfig={globeConfig} />;
-        </div>
+      <br/><br/><br/><br/>
+      <div className="hero--globe">
+  <div className="flex flex-col items-center justify-center md:h-auto dark:bg-black bg-white relative w-full overflow-x-hidden">
+    <div className="max-w-7xl mx-auto w-full relative flex-grow flex-shrink h-[20rem] md:h-[45rem] pl-2 box-border">
+      <h2 className="text-center text-3xl md:text-4xl font-bold text-black dark:text-white">
+        Our Global Clients
+      </h2>
+      <div className="absolute w-full bottom-0 inset-x-0 h-40 z-40" />
+      <div className="absolute w-full bottom-0 md:bottom-0 h-72 md:h-full z-10">
+        <World data={sampleArcs} globeConfig={globeConfig} />
       </div>
     </div>
-    </div> */}
+  </div>
+</div>
+
+      <br/><br/>
       <div className="max-w-5xl mx-auto px-8 mt-20 text-center flex items-center justify-center flex-col">
         <h2 className="text-black text-3xl md:text-4xl font-bold text-center">
           Our Services
