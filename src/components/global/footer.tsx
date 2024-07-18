@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const footer = () => {
   return (
-    <footer className="footer bg-black text-base-content p-10">
+    <footer className="footer bg-black text-white p-10">
   <aside>
     <Image 
         src="/logo.png"
