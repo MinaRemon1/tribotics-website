@@ -133,7 +133,7 @@ export function Globe({ globeConfig, data, labels }: WorldProps) {
       .labelText((d) => (d as LabelData).text)
       .labelColor((d) => (d as LabelData).color)
       .labelAltitude(0.1) // Adjust as needed
-      .labelSize(1.7) // Adjust as needed
+      .labelSize(1.6) // Adjust as needed
       .labelRotation(0) // Adjust as needed
       .labelResolution(8) // Adjust as needed
       .labelIncludeDot(true) // Adjust as needed

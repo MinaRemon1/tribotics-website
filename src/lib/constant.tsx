@@ -93,7 +93,7 @@ export const clients = [...new Array(8)].map((client, index) => ({
       color: "yellow",
     },
     {
-      latitude: 46.0,
+      latitude: 43.0,
       longitude: 2.0,
       text: "France",
       color: "yellow",
