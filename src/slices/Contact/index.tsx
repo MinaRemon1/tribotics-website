@@ -1,6 +1,5 @@
 import Header from "@/components/global/Header";
 import Footer from "@/components/global/footer";
-import Navbar from "@/components/global/navbar";
 import { BackgroundGradientAnimation2 } from "@/components/ui/bg-about";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";

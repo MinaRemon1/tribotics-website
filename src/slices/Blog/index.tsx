@@ -1,4 +1,3 @@
-import Navbar from "@/components/global/navbar";
 import { BackgroundGradientAnimation2 } from "@/components/ui/bg-about";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";

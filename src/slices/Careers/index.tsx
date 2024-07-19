@@ -1,5 +1,4 @@
 import Footer from "@/components/global/footer";
-import Navbar from "@/components/global/navbar";
 import { BackgroundGradientAnimation2 } from "@/components/ui/bg-about";
 import { Content } from "@prismicio/client";
 import { createClient } from "@/prismicio";

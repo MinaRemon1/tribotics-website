@@ -1,6 +1,5 @@
 import Header from "@/components/global/Header";
 import Footer from "@/components/global/footer";
-import Navbar from "@/components/global/navbar";
 import { BackgroundGradientAnimation2 } from "@/components/ui/bg-about";
 import { FlipWords } from "@/components/ui/flip-words";
 import { TracingBeam } from "@/components/ui/tracing-beam";

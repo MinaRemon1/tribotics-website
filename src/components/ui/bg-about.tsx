@@ -1,8 +1,5 @@
 "use client";
 
-import Navbar from "@/components/global/navbar";
-import { Content } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
 import { useEffect, useRef, useState } from "react";
 import { cn } from "../../lib/utils";
 
