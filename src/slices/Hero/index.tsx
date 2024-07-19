@@ -119,27 +119,27 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       </div>
       <div className="max-w-5xl mx-auto px-8 mt-20 text-center flex items-center justify-center flex-col">
         <h2 className="text-black text-3xl md:text-4xl font-bold text-center">
-          Our Services
+          Case Studies
         </h2>
         <br/><br/>
         <div className="flex items-center justify-center w-full">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-screen-2xl">
             <div className="flex justify-center">
               <DirectionAwareHover imageUrl="/pic1.jpg" className="w-full max-w-xs">
-                <p className="font-bold text-xl">Service 1</p>
+                <p className="font-bold text-xl">Robotics</p>
               </DirectionAwareHover>
             </div>
             <div className="flex justify-center">
               <DirectionAwareHover imageUrl="/pic2.jpg" className="w-full max-w-xs">
-                <p className="font-bold text-xl">Service 2</p>
+                <p className="font-bold text-xl">4D Simulators</p>
               </DirectionAwareHover>
             </div>
             <div className="flex justify-center">
               <DirectionAwareHover imageUrl="/pic3.jpg" className="w-full max-w-xs">
-                <p className="font-bold text-xl">Service 3</p>
+                <p className="font-bold text-xl">X-ray Systems</p>
               </DirectionAwareHover>
             </div>
-            <div className="flex justify-center">
+            {/* <div className="flex justify-center">
               <DirectionAwareHover imageUrl="/pic1.jpg" className="w-full max-w-xs">
                 <p className="font-bold text-xl">Service 4</p>
               </DirectionAwareHover>
@@ -153,9 +153,11 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
               <DirectionAwareHover imageUrl="/pic3.jpg" className="w-full max-w-xs">
                 <p className="font-bold text-xl">Service 6</p>
               </DirectionAwareHover>
-            </div>
+            </div> */}
           </div>
         </div>
+        <br/>
+        <h2 className="text-black text-lg md:text-xl text-center">Check back for full project case studies!</h2>
       </div>
       <br/><br/><br/>
       <Footer/>
