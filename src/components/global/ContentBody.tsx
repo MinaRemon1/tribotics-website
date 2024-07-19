@@ -4,7 +4,6 @@ import Bounded from "@/components/ui/bounded";
 import Heading from "@/components/ui/heading";
 import { BackgroundGradientAnimation2 } from "@/components/ui/bg-about";
 import Footer from "@/components/global/footer";
-import Navbar from "@/components/global/navbar";
 import { Content, DateField, isFilled } from "@prismicio/client";
 import Header from "./Header";
 

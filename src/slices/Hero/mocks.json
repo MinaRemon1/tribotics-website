@@ -12,6 +12,24 @@
 				"__TYPE__": "FieldContent",
 				"value": "suppose",
 				"type": "Text"
+			},
+			"flip_words": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"word",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "noon",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
 			}
 		},
 		"items": []

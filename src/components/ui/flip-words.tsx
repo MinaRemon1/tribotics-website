@@ -1,33 +1,39 @@
 "use client";
-import React, { useCallback, useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion, LayoutGroup } from "framer-motion";
+import React, { useCallback, useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { KeyTextField } from "@prismicio/client";
 
 export const FlipWords = ({
-  words,
+  words = [], // Default to an empty array if words is not provided
   duration = 3000,
   className,
 }: {
-  words: string[];
+  words?: (KeyTextField | null)[]; // KeyTextField might include null
   duration?: number;
   className?: string;
 }) => {
-  const [currentWord, setCurrentWord] = useState(words[0]);
+  // Ensure currentWord is always a string
+  const [currentWord, setCurrentWord] = useState<string>(words[0]?.toString() || "");
   const [isAnimating, setIsAnimating] = useState<boolean>(false);
 
-  // thanks for the fix Julian - https://github.com/Julian-AT
   const startAnimation = useCallback(() => {
-    const word = words[words.indexOf(currentWord) + 1] || words[0];
-    setCurrentWord(word);
+    if (words.length === 0) return; // Guard against empty words array
+    const currentIndex = words.indexOf(currentWord);
+    const nextIndex = (currentIndex + 1) % words.length;
+    const nextWord = words[nextIndex]?.toString() || ""; // Convert to string and guard against null
+    setCurrentWord(nextWord);
     setIsAnimating(true);
   }, [currentWord, words]);
 
   useEffect(() => {
-    if (!isAnimating)
-      setTimeout(() => {
+    if (!isAnimating && words.length > 0) {
+      const timer = setTimeout(() => {
         startAnimation();
       }, duration);
-  }, [isAnimating, duration, startAnimation]);
+      return () => clearTimeout(timer); // Cleanup timer on component unmount
+    }
+  }, [isAnimating, duration, startAnimation, words]);
 
   return (
     <AnimatePresence

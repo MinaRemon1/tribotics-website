@@ -4,7 +4,6 @@ import Bounded from "@/components/ui/bounded";
 import Heading from "@/components/ui/heading";
 import { BackgroundGradientAnimation2 } from "@/components/ui/bg-about";
 import Footer from "@/components/global/footer";
-import Navbar from "@/components/global/navbar";
 import { Content, DateField, isFilled } from "@prismicio/client";
 import Header from "./Header";
 
@@ -37,11 +36,6 @@ export default function ContentBody2({page}: {
           <div className="absolute z-50 inset-0 flex flex-col items-start pt-[15%] pl-[10%] pb-[2%] justify-center text-zinc-500 font-bold px-4 pointer-events-none text-center space-y-4">
             <div>
               <Heading className="text-2xl text-slate-200" as="h3">{page.data.title}</Heading>
-              {/* <div className="flex gap-4 text-purple-600 text-xl font-bold">
-                {page.tags.map((tag)=>(
-                  <span key={tag}>{tag}</span>
-                ))}
-              </div> */}
               <p className="flex gap-4 mt-8 text-lg pl-[19%] font-medium text-slate-800">
                 {formattedDate}
               </p>

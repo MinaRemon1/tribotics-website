@@ -25,6 +25,22 @@
             "label": "Tag Line",
             "placeholder": ""
           }
+        },
+        "flip_words": {
+          "type": "Group",
+          "config": {
+            "label": "Flip Words",
+            "repeat": true,
+            "fields": {
+              "word": {
+                "type": "Text",
+                "config": {
+                  "label": "Word",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
         }
       },
       "items": {}

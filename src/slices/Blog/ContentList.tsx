@@ -15,6 +15,11 @@ export default function ContentList({ items, contentType, Image }: ContentListPr
 
   return (
     <div className='mx-[10%]'>
+      {items.length === 0 ? (
+                <p className='text-center py-6 text-lg font-medium text-gray-600'>
+                    No posts. Please, check back later.
+                </p>
+            ) : (
       <ul className='grid border-b border-b-slate-300'>
         {items.map((item, index) => (
           <>
@@ -53,6 +58,7 @@ export default function ContentList({ items, contentType, Image }: ContentListPr
           </>
         ))}
       </ul>
+      )}
     </div>
   );
 }

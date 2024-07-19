@@ -26,9 +26,6 @@ const PrivacyPolicy = ({ slice }: PrivacyPolicyProps): JSX.Element => {
               <p className="bg-clip-text pt-20 drop-shadow-2xl bg-gradient-to-b from-white/80 to-white/20 text-3xl md:text-4xl lg:text-6xl">
                 {slice.primary.title}
               </p>
-              <p className="bg-clip-text pt-4 drop-shadow-2xl bg-gradient-to-b from-white/80 to-white/20 text-md md:text-lg lg:text-xl">
-                Effictive Date: {slice.primary.effective_date}
-              </p>
             </div>
           </div>
           <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-0 transform rotate-180">
@@ -41,6 +38,10 @@ const PrivacyPolicy = ({ slice }: PrivacyPolicyProps): JSX.Element => {
         </BackgroundGradientAnimation2>
       </div>
       <div className="mt-20 justify-center text-justify ml-[10%] mr-[10%] md:mr-[10%] md:ml-[10%] lg:ml-[20%] lg:mr-[20%]">
+        <p className="bg-clip-text pt-4 drop-shadow-2xl bg-gradient-to-b from-white/80 to-white/20 text-md md:text-lg lg:text-xl">
+          Effictive Date: {slice.primary.effective_date}
+        </p>
+        <br/><br/>
         <h1 className="text-black text-lg">
           <PrismicRichText field={slice.primary.content} />
         </h1>

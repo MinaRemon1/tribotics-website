@@ -652,6 +652,21 @@ export type ContactSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *Hero → Default → Primary → Flip Words*
+ */
+export interface HeroSliceDefaultPrimaryFlipWordsItem {
+  /**
+   * Word field in *Hero → Default → Primary → Flip Words*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.flip_words[].word
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  word: prismic.KeyTextField;
+}
+
+/**
  * Primary content in *Hero → Default → Primary*
  */
 export interface HeroSliceDefaultPrimary {
@@ -674,6 +689,18 @@ export interface HeroSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   tag_line: prismic.KeyTextField;
+
+  /**
+   * Flip Words field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.flip_words[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  flip_words: prismic.GroupField<
+    Simplify<HeroSliceDefaultPrimaryFlipWordsItem>
+  >;
 }
 
 /**
@@ -900,6 +927,7 @@ declare module "@prismicio/client" {
       ContactSliceVariation,
       ContactSliceDefault,
       HeroSlice,
+      HeroSliceDefaultPrimaryFlipWordsItem,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
