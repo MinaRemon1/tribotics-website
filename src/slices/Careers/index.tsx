@@ -1,3 +1,5 @@
+"use client";
+
 import Footer from "@/components/global/footer";
 import { BackgroundGradientAnimation2 } from "@/components/ui/bg-about";
 import { Content } from "@prismicio/client";
@@ -5,6 +7,7 @@ import { createClient } from "@/prismicio";
 import { SliceComponentProps } from "@prismicio/react";
 import ContentList from "./ContentList";
 import Header from "@/components/global/Header";
+import { useEffect, useState } from "react";
 
 /**
  * Props for `Careers`.
@@ -14,16 +17,25 @@ export type CareersProps = SliceComponentProps<Content.CareersSlice>;
 /**
  * Component for "Careers" Slices.
  */
-const Careers = async ({ slice }: CareersProps): Promise<JSX.Element> => {
-  const client = createClient()
-  const careers = await client.getAllByType("career")
+const Careers = ({ slice }: CareersProps): JSX.Element => {
+  const [careers, setCareers] = useState<Content.CareerDocument[]>([]);
+
+  useEffect(() => {
+    const fetchCareers = async () => {
+      const client = createClient();
+      const careers = await client.getAllByType<Content.CareerDocument>("career");
+      setCareers(careers);
+    };
+
+    fetchCareers();
+  }, []);
 
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
       <div className="relative w-full flex items-center justify-center">
         <BackgroundGradientAnimation2>
-          <div className=" absolute z-50 inset-0 flex flex-col items-start pl-[20%] pb-[4%] justify-center text-white font-bold px-4 pointer-events-none text-center space-y-4">
+          <div className="absolute z-50 inset-0 flex flex-col items-start pl-[20%] pb-[4%] justify-center text-white font-bold px-4 pointer-events-none text-center space-y-4">
             <div>
               <p className="bg-clip-text pt-20 drop-shadow-2xl bg-gradient-to-b from-white/80 to-white/20 text-3xl md:text-4xl lg:text-6xl">
                 {slice.primary.heading}
