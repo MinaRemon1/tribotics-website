@@ -157,7 +157,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
           </div>
         </div>
         <br/>
-        <h2 className="text-black text-lg md:text-xl text-center">Check back for full project case studies!</h2>
+        <h2 className="text-black text-lg md:text-xl text-center">Check back later for full project case studies!</h2>
       </div>
       <br/><br/><br/>
       <Footer/>
