@@ -64,7 +64,7 @@ const Header = () => {
                         <BsList onClick={toggleMenu} className='h-8 w-8 text-white' />
                     </div>
                 </div>
-                <div className={menuOpen ? "fixed top-0 left-0 w-[75%] md:hidden sm:hidden h-screen bg-zinc-600 p-10 ease-in-out duration-500" : "fixed left-[-100%] top-0 p-10 ease-in-out duration-500"}>
+                <div className={menuOpen ? "fixed top-0 left-0 w-[75%] md:hidden sm:hidden h-screen bg-black p-10 ease-in-out duration-500" : "fixed left-[-100%] top-0 p-10 ease-in-out duration-500"}>
                     <div className='flex w-full items-center justify-end'>
                         <div className='cursor-pointer'>
                             <BsX onClick={toggleMenu} className='h-8 w-8 text-white' />
