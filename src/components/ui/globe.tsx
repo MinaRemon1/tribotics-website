@@ -133,7 +133,7 @@ export function Globe({ globeConfig, data, labels }: WorldProps) {
       .labelText((d) => (d as LabelData).text)
       .labelColor((d) => (d as LabelData).color)
       .labelAltitude(0.1) // Adjust as needed
-      .labelSize(1.5) // Adjust as needed
+      .labelSize(1.7) // Adjust as needed
       .labelRotation(0) // Adjust as needed
       .labelResolution(8) // Adjust as needed
       .labelIncludeDot(true) // Adjust as needed
@@ -304,6 +304,20 @@ export function World(props: WorldProps) {
       <pointLight
         color={globeConfig.pointLight}
         position={new Vector3(-200, 500, 200)}
+        intensity={0.8}
+      />
+
+      <directionalLight
+        color={globeConfig.directionalTopLight}
+        position={new Vector3(200, -500, -200)}
+      />
+      <directionalLight
+        color={globeConfig.directionalLeftLight}
+        position={new Vector3(400, -100, -400)}
+      />
+      <pointLight
+        color={globeConfig.pointLight}
+        position={new Vector3(200, -500, -200)}
         intensity={0.8}
       />
       <Globe {...props} />

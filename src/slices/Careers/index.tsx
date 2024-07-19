@@ -8,6 +8,7 @@ import { SliceComponentProps } from "@prismicio/react";
 import ContentList from "./ContentList";
 import Header from "@/components/global/Header";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 /**
  * Props for `Careers`.
@@ -41,6 +42,15 @@ const Careers = ({ slice }: CareersProps): JSX.Element => {
                 {slice.primary.heading}
               </p>
             </div>
+          </div>
+          <div className="flex items-center justify-center h-screen relative">
+            <Image
+              src="/gears.png"
+              alt="Gears"
+              className="absolute right-0 top-0 w-full h-full object-cover"
+              width={1500}
+              height={1500}
+            />
           </div>
           <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-0 transform rotate-180">
             <svg className="relative block w-[calc(100% + 1.3px)] h-56" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
