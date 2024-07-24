@@ -41,7 +41,7 @@ export default function ContentList({ items, contentType, Image }: ContentListPr
                       />
                     )}
                     <div>
-                      <span className='text-xl md:text-2xl font-bold'>{item.data.title}</span>
+                      <span className='text-lg md:text-xl font-bold'>{item.data.title}</span>
                       <div className='flex flex-wrap gap-1 md:gap-3 text-violet-500 text-md font-bold'>
                         {item.tags.map((tag, index) => (
                           <span key={index}>{tag}</span>
