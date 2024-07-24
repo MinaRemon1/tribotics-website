@@ -35,7 +35,7 @@ export default function ContentBody({page}: {
         <BackgroundGradientAnimation2>
           <div className="absolute z-50 inset-0 flex flex-col items-start pt-[10%] pl-[10%] pb-[2%] justify-center text-zinc-500 font-bold px-4 pointer-events-none text-left space-y-4">
             <div>
-              <Heading className="text-[1.75rem] md:text-[2rem] lg:text-[3rem] text-slate-200">{page.data.title}</Heading>
+              <Heading className="text-[1.25rem] md:text-[1.5rem] lg:text-[2rem] text-slate-200">{page.data.title}</Heading>
               {/* <div className="flex gap-4 text-purple-600 text-xl font-bold">
                 {page.tags.map((tag)=>(
                   <span key={tag}>{tag}</span>
