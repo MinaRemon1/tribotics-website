@@ -41,7 +41,7 @@ export default function ContentBody({page}: {
                   <span key={tag}>{tag}</span>
                 ))}
               </div> */}
-              <p className="flex gap-4 mt-8 text-md md:text-lg lg:text-lg pl-[5%] text-left font-medium text-slate-800">
+              <p className="flex gap-4 mt-8 text-md md:text-lg lg:text-lg pl-[5%] text-left font-medium text-black">
                 {formattedDate}
               </p>
             </div>
