@@ -55,7 +55,7 @@ export default function ContentBody({page}: {
         </div>
         </BackgroundGradientAnimation2>
         </div>
-    <div className="pl-[10%]">
+    <div className="pl-[10%] pr-[10%]">
       <div className="prose prose-lg prose-invert w-full max-w-none text-black heading-black">
         <SliceZone slices={page.data.slices} components={components} />
       </div>
