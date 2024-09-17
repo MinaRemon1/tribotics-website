@@ -32,7 +32,7 @@ const Header = () => {
 
     return (
         <header>
-            <nav className={`fixed w-full h-24 right-0 left-0 top-0 pl-3 pr-3 md:pl-10 md:pr-10 py-4 px-4 z-[100] flex items-center border-neutral-900 justify-between transition-colors duration-500 ${scrolled ? 'backdrop-blur-lg bg-black/65' : 'bg-transparent'}`}>
+            <nav className={`fixed w-full h-32 right-0 left-0 top-0 pl-3 pr-3 md:pl-10 md:pr-10 py-4 px-4 z-[100] flex items-center border-neutral-900 justify-between transition-colors duration-500 ${scrolled ? 'backdrop-blur-lg bg-black/65' : 'bg-transparent'}`}>
                 <div className='flex items-center justify-between h-full w-full'>
                     <Link href='/'>
                         {/* <Image 
