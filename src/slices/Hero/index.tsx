@@ -154,7 +154,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
               </DirectionAwareHover>
             </div>
             <div className="flex justify-center">
-              <DirectionAwareHover imageUrl="/GEN6.bmp" className="w-full max-w-xs">
+              <DirectionAwareHover imageUrl="/Gen6.png" className="w-full max-w-xs">
                 <p className="font-bold text-xl">Gen6</p>
               </DirectionAwareHover>
             </div>
