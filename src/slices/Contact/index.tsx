@@ -31,9 +31,9 @@ const Contact = ({ slice }: ContactProps): JSX.Element => {
 
   const handleSelectChange = (value: string) => {
     if (value === "General Enquire") {
-      setEmail("mwpepgdg");
+      setEmail("mvgoopao");
     } else if (value === "Servicing and Support") {
-      setEmail("xgvwvggd");
+      setEmail("mwpkkeop");
     }
   };
 
