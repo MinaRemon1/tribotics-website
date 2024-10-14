@@ -87,19 +87,10 @@ const About = ({ slice }: AboutProps): JSX.Element => {
         <div className="max-w-2xl mx-auto text-lg antialiased pt-4 relative min-h-screen">
             <div className="mb-10">
               <p className="text-3xl bold mb-4">
-              {slice.primary.title}
-            </p>
+                {slice.primary.title}
+              </p>
             <PrismicRichText field={slice.primary.intro} />
               <div className="text-lg">
-                {/* {item?.image && (
-                  <Image
-                    src={item.image}
-                    alt="blog thumbnail"
-                    height="1000"
-                    width="1000"
-                    className="rounded-lg mb-10 object-cover"
-                  />
-                )} */}
                 <br/>
                 <PrismicNextImage className="rounded-lg mb-10 object-cover" field={slice.primary.image} />
                 <PrismicRichText field={slice.primary.body} />
