@@ -82,8 +82,8 @@ const Contact = ({ slice }: ContactProps): JSX.Element => {
             Got a question? Shoot us a message!
           </div>
           <br />
-          {/* <form ref={formRef} onSubmit={handleSubmit} method="POST" className="flex flex-col justify-center items-center space-y-5 mx-5 pb-20"> */}
-          <form ref={formRef} method="POST" className="flex flex-col justify-center items-center space-y-5 mx-5 pb-20">
+          <form ref={formRef} onSubmit={handleSubmit} method="POST" className="flex flex-col justify-center items-center space-y-5 mx-5 pb-20">
+          {/* <form ref={formRef} method="POST" className="flex flex-col justify-center items-center space-y-5 mx-5 pb-20"> */}
             <input type="hidden" name="_cc" value="mina@etherealai.tech"></input>
             <input type="hidden" name="_captcha" value="false"></input>
             <Input name="Name" type="text" placeholder="Name" className="w-96 mr-5 ml-5 text-black" />
