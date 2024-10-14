@@ -42,23 +42,7 @@ const dummyContent = [
 /**
  * Props for `About`.
  */
-// export type AboutProps = SliceComponentProps<Content.AboutSlice>;
-
-export type AboutSlicePrimary = {
-  title: string;
-  intro: any;
-  image: any;
-  body: any;
-};
-
-export type AboutSlice = {
-  primary: AboutSlicePrimary;
-  slice_type: string;
-  variation: string;
-};
-
 export type AboutProps = SliceComponentProps<Content.AboutSlice>;
-
 
 /**
  * Component for "About" Slices.
@@ -103,7 +87,7 @@ const About = ({ slice }: AboutProps): JSX.Element => {
         <div className="max-w-2xl mx-auto text-lg antialiased pt-4 relative min-h-screen">
             <div className="mb-10">
               <p className="text-3xl bold mb-4">
-                {slice.primary.title}
+                Tribotics LTD
               </p>
             <PrismicRichText field={slice.primary.intro} />
               <div className="text-lg">
