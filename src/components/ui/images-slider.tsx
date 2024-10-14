@@ -10,7 +10,7 @@ export const ImagesSlider = ({
   overlayClassName,
   className,
   autoplay = true,
-  direction = "up",
+  direction = "left", // changed to left for sliding
 }: {
   images: string[];
   children: React.ReactNode;
@@ -18,10 +18,9 @@ export const ImagesSlider = ({
   overlayClassName?: string;
   className?: string;
   autoplay?: boolean;
-  direction?: "up" | "down";
+  direction?: "left" | "right"; // modified direction options
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [loading, setLoading] = useState(false);
   const [loadedImages, setLoadedImages] = useState<string[]>([]);
 
   const handleNext = () => {
@@ -38,26 +37,22 @@ export const ImagesSlider = ({
 
   useEffect(() => {
     loadImages();
-  }, []);
+  }, [images]);
 
   const loadImages = () => {
-    setLoading(true);
     const loadPromises = images.map((image) => {
-      return new Promise((resolve, reject) => {
-        const img = new Image();
-        img.src = image;
-        img.onload = () => resolve(image);
-        img.onerror = reject;
+      const img = new Image();
+      img.src = image;
+      return new Promise<void>((resolve) => {
+        img.onload = () => resolve();
       });
     });
 
     Promise.all(loadPromises)
-      .then((loadedImages) => {
-        setLoadedImages(loadedImages as string[]);
-        setLoading(false);
-      })
+      .then(() => setLoadedImages(images))
       .catch((error) => console.error("Failed to load images", error));
   };
+
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "ArrowRight") {
@@ -85,36 +80,25 @@ export const ImagesSlider = ({
 
   const slideVariants = {
     initial: {
-      scale: 0,
+      x: "100%", // start off to the right
       opacity: 0,
-      rotateX: 45,
     },
     visible: {
-      scale: 1,
-      rotateX: 0,
+      x: "0%",
       opacity: 1,
       transition: {
         duration: 0.5,
-        ease: [0.645, 0.045, 0.355, 1.0],
+        ease: "easeInOut",
       },
     },
-    upExit: {
-      opacity: 1,
-      y: "-150%",
+    exit: {
+      x: direction === "left" ? "-100%" : "100%", // slide out to the left or right
+      opacity: 0,
       transition: {
-        duration: 1,
-      },
-    },
-    downExit: {
-      opacity: 1,
-      y: "150%",
-      transition: {
-        duration: 1,
+        duration: 0.5,
       },
     },
   };
-
-  const areImagesLoaded = loadedImages.length > 0;
 
   return (
     <div
@@ -122,25 +106,22 @@ export const ImagesSlider = ({
         "overflow-hidden h-full w-full relative flex items-center justify-center",
         className
       )}
-      style={{
-        perspective: "1000px",
-      }}
     >
-      {areImagesLoaded && children}
-      {areImagesLoaded && overlay && (
+      {loadedImages.length > 0 && children}
+      {loadedImages.length > 0 && overlay && (
         <div
-          className={cn("absolute inset-0 bg-black/60 z-40", overlayClassName)}
+          className={cn("absolute inset-0 bg-black/60 z-10", overlayClassName)}
         />
       )}
 
-      {areImagesLoaded && (
+      {loadedImages.length > 0 && (
         <AnimatePresence>
           <motion.img
             key={currentIndex}
             src={loadedImages[currentIndex]}
             initial="initial"
             animate="visible"
-            exit={direction === "up" ? "upExit" : "downExit"}
+            exit="exit"
             variants={slideVariants}
             className="image h-full w-full absolute inset-0 object-cover object-center"
           />
