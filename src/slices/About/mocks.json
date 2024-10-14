@@ -20,7 +20,6 @@
 				]
 			},
 			"image": {
-				"__TYPE__": "ImageContent",
 				"origin": {
 					"id": "main",
 					"url": "https://images.unsplash.com/photo-1551739440-5dd934d3a94a",
@@ -38,7 +37,26 @@
 					},
 					"background": "transparent"
 				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
 				"thumbnails": {}
+			},
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "college",
+				"type": "Text"
+			},
+			"intro": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Ad eu pariatur veniam consequat excepteur id ad dolore qui pariatur. Sint ut et sint sint nostrud in ad id sunt ullamco ullamco dolor laborum. Ex proident Lorem magna deserunt Lorem exercitation."
+						}
+					}
+				]
 			}
 		},
 		"items": []
