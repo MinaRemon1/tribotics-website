@@ -85,15 +85,23 @@ const About = ({ slice }: AboutProps): JSX.Element => {
       </div>
       <TracingBeam className="px-6 flex-grow">
         <div className="max-w-2xl mx-auto text-lg antialiased pt-4 relative min-h-screen">
-            <div className="mb-10">
+          {dummyContent.map((item, index) => (
+            <div key={`content-${index}`} className="mb-10">
               <p className="text-3xl bold mb-4">
-                Tribotics LTD
-              </p>
-            <PrismicRichText field={slice.primary.intro} />
+              {item.title}
+            </p>
+            {item.description2}
               <div className="text-lg">
-                <br/>
-                <PrismicNextImage className="rounded-lg mb-10 object-cover" field={slice.primary.image} />
-                <PrismicRichText field={slice.primary.body} />
+                {item?.image && (
+                  <Image
+                    src={item.image}
+                    alt="blog thumbnail"
+                    height="1000"
+                    width="1000"
+                    className="rounded-lg mb-10 object-cover"
+                  />
+                )}
+                {item.description}
               </div>
               <div className="pt-10 pb-20">
                 <a href="/contact">
@@ -103,6 +111,7 @@ const About = ({ slice }: AboutProps): JSX.Element => {
                 </a>
               </div>
             </div>
+          ))}
         </div>
       </TracingBeam>
       <br/>
