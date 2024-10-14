@@ -672,6 +672,21 @@ export type ContactSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *Hero → Default → Primary → Hero Images*
+ */
+export interface HeroSliceDefaultPrimaryHeroImagesItem {
+  /**
+   * Image field in *Hero → Default → Primary → Hero Images*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.hero_images[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
  * Item in *Hero → Default → Primary → Flip Words*
  */
 export interface HeroSliceDefaultPrimaryFlipWordsItem {
@@ -687,9 +702,56 @@ export interface HeroSliceDefaultPrimaryFlipWordsItem {
 }
 
 /**
+ * Item in *Hero → Default → Primary → Services*
+ */
+export interface HeroSliceDefaultPrimaryServicesItem {
+  /**
+   * Title field in *Hero → Default → Primary → Services*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.services[].title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Image field in *Hero → Default → Primary → Services*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.services[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * href field in *Hero → Default → Primary → Services*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.services[].href
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  href: prismic.LinkField;
+}
+
+/**
  * Primary content in *Hero → Default → Primary*
  */
 export interface HeroSliceDefaultPrimary {
+  /**
+   * Hero Images field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.hero_images[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  hero_images: prismic.GroupField<
+    Simplify<HeroSliceDefaultPrimaryHeroImagesItem>
+  >;
+
   /**
    * USP field in *Hero → Default → Primary*
    *
@@ -721,6 +783,16 @@ export interface HeroSliceDefaultPrimary {
   flip_words: prismic.GroupField<
     Simplify<HeroSliceDefaultPrimaryFlipWordsItem>
   >;
+
+  /**
+   * Services field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.services[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  services: prismic.GroupField<Simplify<HeroSliceDefaultPrimaryServicesItem>>;
 }
 
 /**
@@ -947,7 +1019,9 @@ declare module "@prismicio/client" {
       ContactSliceVariation,
       ContactSliceDefault,
       HeroSlice,
+      HeroSliceDefaultPrimaryHeroImagesItem,
       HeroSliceDefaultPrimaryFlipWordsItem,
+      HeroSliceDefaultPrimaryServicesItem,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,

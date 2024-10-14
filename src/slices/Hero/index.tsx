@@ -14,13 +14,14 @@ import Header from "@/components/global/Header";
 import Link from "next/link";
 import { ImagesSlider } from "@/components/ui/images-slider";
 import { motion } from "framer-motion";
+import { asLink } from '@prismicio/helpers';
 
-const images = [
-  "/pic1.jpg",
-  "/pic2.jpg",
-  "/pic3.jpg",
-  "/10.jpg"
-];
+// const images = [
+//   "/pic1.jpg",
+//   "/pic2.jpg",
+//   "/pic3.jpg",
+//   "/10.jpg"
+// ];
 
 /**
  * Props for `Hero`.
@@ -35,6 +36,9 @@ const words = ["Automations", "Robotics", "Mechatronics"];
 const Hero = ({ slice }: HeroProps): JSX.Element => {
   const flipWords = slice.primary.flip_words;
   const result = flipWords.map(item => item.word);
+
+  const images = slice?.primary?.hero_images?.map(item => item.image?.url || '') || [];
+
   return (
     <section
       data-slice-type={slice.slice_type}
@@ -131,39 +135,26 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
           Our Services
         </h2>
         <br/><br/>
-        <div className="flex items-center justify-center w-full">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-screen-2xl">
-          <div className="flex justify-center">
-              <DirectionAwareHover imageUrl="/pic3.jpg" className="w-full max-w-xs">
-                <p className="font-bold text-xl">Metal Detection Systems</p>
-              </DirectionAwareHover>
-            </div>
-            <div className="flex justify-center">
-              <DirectionAwareHover imageUrl="/pic1.jpg" className="w-full max-w-xs">
-                <p className="font-bold text-xl">Theme Park - Ride and Show Control Systems</p>
-              </DirectionAwareHover>
-            </div>
-            <div className="flex justify-center">
-              <DirectionAwareHover imageUrl="/pic2.jpg" className="w-full max-w-xs">
-                <p className="font-bold text-xl">Motion Bases and Flying Theatres</p>
-              </DirectionAwareHover>
-            </div>
-            <div className="flex justify-center">
-              <DirectionAwareHover imageUrl="/10.jpg" className="w-full max-w-xs">
-                <p className="font-bold text-xl">Electrical Control Panels</p>
-              </DirectionAwareHover>
-            </div>
-            <div className="flex justify-center">
-              <DirectionAwareHover imageUrl="/Gen6.png" className="w-full max-w-xs">
-                <p className="font-bold text-xl">Gen6</p>
-              </DirectionAwareHover>
-            </div>
-            <div className="flex justify-center">
-              <DirectionAwareHover imageUrl="/Consultation.png" className="w-full max-w-xs object-fill">
-                <p className="font-bold text-xl">Consultation</p>
-              </DirectionAwareHover>
-            </div>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-screen-2xl w-full">
+        {slice?.primary?.services?.length > 0 ? (
+          slice.primary.services.map((item, index) => (
+            <div key={index} className="flex justify-center">
+              {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-screen-2xl w-full"> */}
+                <Link href={asLink(item.href) ?? '#'}>
+                  {item.image?.url ? (
+                    <DirectionAwareHover imageUrl={item.image.url} className="w-full max-w-xs">
+                      <p className="font-bold text-xl">{item.title}</p>
+                    </DirectionAwareHover>
+                  ) : (
+                    <p></p>
+                  )}
+                </Link>
+              </div>
+            // </div>
+          ))
+        ) : (
+          <p></p> // Fallback in case services array is empty or undefined
+        )}
         </div>
         <br/>
         {/* <h2 className="text-black text-lg md:text-xl text-center">Check back later for full project case studies!</h2> */}

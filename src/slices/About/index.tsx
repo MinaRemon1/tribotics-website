@@ -9,36 +9,6 @@ import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import Image from "next/image";
 import { twMerge } from "tailwind-merge";
 
-const dummyContent = [
-  {
-    title: "Tribotics LTD",
-    description2: (
-      <>
-        <p>
-          Founded in 2003, Tribotics has grown from a specialist in designing and producing PLC-based control systems and electrical control panels to a premier provider of comprehensive turnkey solutions. Our expertise spans from initial concept development to on-site installation, catering to a diverse and global clientele, including industry giants such as Amazon (UK and Europe), Bergstrom Europe, Universal Studios (Orlando and Los Angeles), CyDen, and Sony UK, among others.
-        </p>
-        <br />
-      </>
-    ),
-    description: (
-      <>
-        <p>
-          Our state-of-the-art 60,000 sq. ft. manufacturing and assembly facility in South Wales is equipped to handle every aspect of project development internally. This includes a multidisciplinary design office, a fully equipped Electrical Control Panel shop, a dedicated fabrication area, a large assembly space, and a PLC/Embedded Systems development and training lab. This extensive in-house capability ensures we maintain control over quality and timelines, delivering exceptional results from start to finish.
-        </p>
-        <br />
-        <p>
-          At Tribotics, we pride ourselves on our innovative product offerings, which include Conveyor-Based Metal Detection Systems, Fully Equipped Production Lines and Cells, Specialist Test Equipment, Motion Bases and Simulators, Animated Figure Control Systems, Theme Park Ride Control Systems, Show Control Systems, and bespoke machinery featuring Vision and Robotics technology. 
-        </p>
-        <br />
-        <p>
-          Our commitment to excellence and broad expertise enables us to meet each client&apos;s unique needs, making Tribotics a trusted partner in the automation and control systems industry.
-        </p>
-      </>
-    ),
-    image: "/about.jpg",
-  },
-];
-
 /**
  * Props for `About`.
  */

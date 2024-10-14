@@ -13,6 +13,7 @@
     "@eslint/config-array": "^0.17.0",
     "@eslint/object-schema": "^2.1.4",
     "@prismicio/client": "^7.5.0",
+    "@prismicio/helpers": "^2.3.9",
     "@prismicio/next": "^1.6.0",
     "@prismicio/react": "^2.8.0",
     "@radix-ui/react-select": "^2.1.1",

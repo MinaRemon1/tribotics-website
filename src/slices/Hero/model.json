@@ -12,6 +12,23 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
+        "hero_images": {
+          "type": "Group",
+          "config": {
+            "label": "Hero Images",
+            "repeat": true,
+            "fields": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "Image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              }
+            }
+          }
+        },
         "usp": {
           "type": "Text",
           "config": {
@@ -37,6 +54,38 @@
                 "config": {
                   "label": "Word",
                   "placeholder": ""
+                }
+              }
+            }
+          }
+        },
+        "services": {
+          "type": "Group",
+          "config": {
+            "label": "Services",
+            "repeat": true,
+            "fields": {
+              "title": {
+                "type": "Text",
+                "config": {
+                  "label": "Title",
+                  "placeholder": ""
+                }
+              },
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "Image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "href": {
+                "type": "Link",
+                "config": {
+                  "label": "href",
+                  "placeholder": "",
+                  "select": null
                 }
               }
             }
