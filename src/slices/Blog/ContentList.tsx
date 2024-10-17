@@ -11,7 +11,7 @@ type ContentListProps = {
 };
 
 export default function ContentList({ items, contentType, Image }: ContentListProps) {
-  const urlPrefix = contentType === 'Blog' ? '/blog' : '/our-services';
+  const urlPrefix = contentType === 'Blog' ? '/blog' : '/case-study';
 
   return (
     <div className='mx-[10%]'>
