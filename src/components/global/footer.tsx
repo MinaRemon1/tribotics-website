@@ -48,7 +48,7 @@ const footer = () => {
     <a className="link link-hover" href='/about'>About us</a>
     <a className="link link-hover" href='/contact'>Contact</a>
     <a className="link link-hover" href='/blog'>Blog</a>
-    <a className="link link-hover">Careers</a>
+    <a className="link link-hover" href='/carrers'>Careers</a>
   </nav>
   <nav>
     <h6 className="footer-title">Legal</h6>
