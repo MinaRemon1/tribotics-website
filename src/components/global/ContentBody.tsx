@@ -41,9 +41,9 @@ export default function ContentBody({page}: {
                   <span key={tag}>{tag}</span>
                 ))}
               </div> */}
-              <p className="flex gap-4 mt-8 text-md md:text-lg lg:text-lg pl-[5%] text-left font-medium text-black">
+              {/* <p className="flex gap-4 mt-8 text-md md:text-lg lg:text-lg pl-[5%] text-left font-medium text-black">
                 {formattedDate}
-              </p>
+              </p> */}
             </div>
           </div>
           <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-0 transform rotate-180">
@@ -55,7 +55,11 @@ export default function ContentBody({page}: {
         </div>
         </BackgroundGradientAnimation2>
         </div>
+        
     <div className="pl-[10%] pr-[10%]">
+      <p className="flex gap-4 mt-8 text-md md:text-lg lg:text-lg text-left font-medium text-black">
+        {formattedDate}
+      </p>
       <div className="prose prose-lg prose-invert w-full max-w-none text-black heading-black">
         <SliceZone slices={page.data.slices} components={components} />
       </div>

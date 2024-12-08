@@ -5,9 +5,11 @@ import { FlipWords } from "@/components/ui/flip-words";
 import { TracingBeam } from "@/components/ui/tracing-beam";
 import { Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
-import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import { PrismicRichText, SliceComponentProps, SliceZone } from "@prismicio/react";
 import Image from "next/image";
 import { twMerge } from "tailwind-merge";
+import { components } from "@/slices";
+import page from "@/app/page";
 
 /**
  * Props for `About`.

@@ -11,4 +11,5 @@ export const components = {
   image_block: dynamic(() => import("./ImageBlock")),
   privacy_policy: dynamic(() => import("./PrivacyPolicy")),
   text_block: dynamic(() => import("./TextBlock")),
+  video_block: dynamic(() => import("./VideoBlock")),
 };
