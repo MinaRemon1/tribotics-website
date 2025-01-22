@@ -18,7 +18,7 @@ export default function ContentBody({page}: {
     <div className="flex-grow">
     <div className="relative w-full flex items-center justify-center">
         <BackgroundGradientAnimation2>
-          <div className="absolute z-50 inset-0 flex flex-col items-start pt-[10%] pl-[10%] pb-[2%] justify-center text-zinc-500 font-bold px-4 pointer-events-none text-left space-y-4">
+          <div className="absolute z-50 inset-0 flex flex-col pt-[10%] pl-[10%] pb-[2%] justify-center text-zinc-500 font-bold px-4 pointer-events-none text-left space-y-4">
             <div>
               <Heading className="text-[1.5rem] md:text-[2rem] lg:text-[3.5rem] text-slate-200 pr-[5%] md:pr-[10%] lg:pr-[40%]">{page.data.title}</Heading>
             </div>
