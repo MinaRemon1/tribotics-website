@@ -54,6 +54,7 @@ const Header = () => {
                         <ul className='hidden sm:flex'>
                             <li className={styles.navLinks}><Link href='/'>Home</Link></li>
                             <li className={styles.navLinks}><Link href='/about'>About</Link></li>
+                            <li className={styles.navLinks}><Link href='/team'>Team</Link></li>
                             <li className={styles.navLinks}><Link href='/contact'>Contact</Link></li>
                             <li className={styles.navLinks}><Link href='/blog'>Blog</Link></li>
                             <li className={styles.navLinks}><Link href='/our-services'>Our Services</Link></li>
@@ -83,6 +84,7 @@ const Header = () => {
                         <ul>
                             <li onClick={() => setMenuOpen(false)} className='py-4 hover:text-zinc-300 text-white'><Link href='/'>Home</Link></li>
                             <li onClick={() => setMenuOpen(false)} className='py-4 hover:text-zinc-300 text-white'><Link href='/about'>About</Link></li>
+                            <li onClick={() => setMenuOpen(false)} className='py-4 hover:text-zinc-300 text-white'><Link href='/team'>Team</Link></li>
                             <li onClick={() => setMenuOpen(false)} className='py-4 hover:text-zinc-300 text-white'><Link href='/contact'>Contact</Link></li>
                             <li onClick={() => setMenuOpen(false)} className='py-4 hover:text-zinc-300 text-white'><Link href='/blog'>Blog</Link></li>
                             <li onClick={() => setMenuOpen(false)} className='py-4 hover:text-zinc-300 text-white'><Link href='/case-studies'>Case Studies</Link></li>

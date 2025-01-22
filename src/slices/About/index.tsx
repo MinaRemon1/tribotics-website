@@ -10,6 +10,8 @@ import Image from "next/image";
 import { twMerge } from "tailwind-merge";
 import { components } from "@/slices";
 import page from "@/app/page";
+import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
+import { cards } from "@/lib/constant";
 
 /**
  * Props for `About`.
@@ -67,6 +69,25 @@ const About = ({ slice }: AboutProps): JSX.Element => {
                 <PrismicNextImage className="rounded-lg mb-10 object-cover" field={slice.primary.image} />
                 <PrismicRichText field={slice.primary.body} />
               </div>
+              {/* <br/> */}
+              {/* <p className="text-3xl bold mb-4 mt-10">
+                {slice.primary.meet_the_team}
+              </p>
+              <div className="max-w-4xl min-h-full">
+                <Carousel items={cards} />
+              </div> */}
+
+              {/* <div className="text-lg">
+                <br/>
+                <PrismicRichText field={slice.primary.body2} />
+                <br/>
+                <PrismicNextImage className="rounded-lg mb-10 object-cover" field={slice.primary.image2} />
+                <PrismicRichText field={slice.primary.body3} />
+                <br/>
+                <PrismicNextImage className="rounded-lg mb-10 object-cover" field={slice.primary.image3} />
+                <PrismicRichText field={slice.primary.body4} />
+                <br/>
+              </div> */}
               <div className="pt-10 pb-20">
                 <a href="/contact">
                   <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-gradient-to-br from-gray-800 to-gray-900 px-6 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-50">
@@ -75,6 +96,7 @@ const About = ({ slice }: AboutProps): JSX.Element => {
                 </a>
               </div>
             </div>
+          
         </div>
       </TracingBeam>
       <br/>
